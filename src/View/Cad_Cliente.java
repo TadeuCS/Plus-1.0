@@ -93,7 +93,7 @@ public class Cad_Cliente extends javax.swing.JFrame {
 
         pnl_dadosPessoais.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Dados Pessoais", javax.swing.border.TitledBorder.CENTER, javax.swing.border.TitledBorder.DEFAULT_POSITION));
 
-        jLabel1.setText("Codigo:");
+        jLabel1.setText("Código:");
 
         jLabel2.setText("Nome:");
 
@@ -103,23 +103,15 @@ public class Cad_Cliente extends javax.swing.JFrame {
 
         jLabel6.setText("Tipo");
 
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Fisica", "Juridica" }));
+        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Física", "Jurídica" }));
 
         jLabel7.setText("CPF:");
 
         jLabel8.setText("Contato:");
 
-        try {
-            txt_telefone.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("(##) ####-####")));
-        } catch (java.text.ParseException ex) {
-            ex.printStackTrace();
-        }
+        txt_telefone.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("(##) ####-####")));
 
-        try {
-            txt_cpf.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("###.###.###.##")));
-        } catch (java.text.ParseException ex) {
-            ex.printStackTrace();
-        }
+        txt_cpf.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("###.###.###.##")));
         txt_cpf.setToolTipText("");
 
         jLabel9.setText("Nome Fantasia:");
@@ -128,11 +120,7 @@ public class Cad_Cliente extends javax.swing.JFrame {
 
         jLabel10.setText("Inscrição Estadual:");
 
-        try {
-            txt_rg.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("##.###.###")));
-        } catch (java.text.ParseException ex) {
-            ex.printStackTrace();
-        }
+        txt_rg.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("##.###.###")));
 
         jLabel13.setText("RG:");
 
@@ -229,11 +217,7 @@ public class Cad_Cliente extends javax.swing.JFrame {
 
         jLabel3.setText("CEP:");
 
-        try {
-            txt_cep.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("#####-###")));
-        } catch (java.text.ParseException ex) {
-            ex.printStackTrace();
-        }
+        txt_cep.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("#####-###")));
         txt_cep.setText("");
         txt_cep.setToolTipText("");
 
@@ -371,11 +355,7 @@ public class Cad_Cliente extends javax.swing.JFrame {
 
         jLabel25.setText("CEP:");
 
-        try {
-            txt_end_cep.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("#####-###")));
-        } catch (java.text.ParseException ex) {
-            ex.printStackTrace();
-        }
+        txt_end_cep.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("#####-###")));
         txt_end_cep.setText("");
         txt_end_cep.setToolTipText("");
 
