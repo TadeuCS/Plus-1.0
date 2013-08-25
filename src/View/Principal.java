@@ -218,7 +218,7 @@ public class Principal extends javax.swing.JFrame {
         pnl_barraStatus.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
 
         jLabel7.setFont(new java.awt.Font("Courier New", 1, 14)); // NOI18N
-        jLabel7.setText("Usuario:");
+        jLabel7.setText("Usuário:");
 
         txt_userLogado.setEditable(false);
         txt_userLogado.setBackground(new java.awt.Color(204, 204, 204));

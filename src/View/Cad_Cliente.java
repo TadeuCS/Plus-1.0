@@ -80,10 +80,10 @@ public class Cad_Cliente extends javax.swing.JFrame {
         jLabel31 = new javax.swing.JLabel();
         txt_end_complemento = new javax.swing.JTextField();
         pnl_rodape = new javax.swing.JPanel();
-        jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
-        jButton3 = new javax.swing.JButton();
-        jButton4 = new javax.swing.JButton();
+        btn_inclusao = new javax.swing.JButton();
+        btn_alteracao = new javax.swing.JButton();
+        btn_consulta = new javax.swing.JButton();
+        btn_exclusao = new javax.swing.JButton();
         txt_operacao = new javax.swing.JTextField();
         jLabel32 = new javax.swing.JLabel();
         btn_cad_cliente1 = new javax.swing.JLabel();
@@ -415,13 +415,13 @@ public class Cad_Cliente extends javax.swing.JFrame {
 
         pnl_rodape.setBorder(javax.swing.BorderFactory.createEtchedBorder());
 
-        jButton1.setText("Inclusão");
+        btn_inclusao.setText("Inclusão");
 
-        jButton2.setText("Alteração");
+        btn_alteracao.setText("Alteração");
 
-        jButton3.setText("Consulta");
+        btn_consulta.setText("Consulta");
 
-        jButton4.setText("Exclusão");
+        btn_exclusao.setText("Exclusão");
 
         txt_operacao.setEditable(false);
 
@@ -437,13 +437,13 @@ public class Cad_Cliente extends javax.swing.JFrame {
             pnl_rodapeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(pnl_rodapeLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jButton1)
+                .addComponent(btn_inclusao)
                 .addGap(18, 18, 18)
-                .addComponent(jButton2)
+                .addComponent(btn_alteracao)
                 .addGap(18, 18, 18)
-                .addComponent(jButton4)
+                .addComponent(btn_exclusao)
                 .addGap(18, 18, 18)
-                .addComponent(jButton3)
+                .addComponent(btn_consulta)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(btn_cad_cliente, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
@@ -459,16 +459,16 @@ public class Cad_Cliente extends javax.swing.JFrame {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnl_rodapeLayout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(pnl_rodapeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(btn_cad_cliente, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(btn_cad_cliente1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(pnl_rodapeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(jButton4)
-                        .addComponent(jButton3)
+                        .addComponent(btn_exclusao)
+                        .addComponent(btn_consulta)
                         .addComponent(txt_operacao)
-                        .addComponent(jLabel32)
-                        .addComponent(btn_cad_cliente, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(btn_cad_cliente1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addComponent(jLabel32))
                     .addGroup(pnl_rodapeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(jButton1)
-                        .addComponent(jButton2)))
+                        .addComponent(btn_inclusao)
+                        .addComponent(btn_alteracao)))
                 .addContainerGap())
         );
 
@@ -549,12 +549,12 @@ public class Cad_Cliente extends javax.swing.JFrame {
         });
     }
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btn_alteracao;
     private javax.swing.JLabel btn_cad_cliente;
     private javax.swing.JLabel btn_cad_cliente1;
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
-    private javax.swing.JButton jButton4;
+    private javax.swing.JButton btn_consulta;
+    private javax.swing.JButton btn_exclusao;
+    private javax.swing.JButton btn_inclusao;
     private javax.swing.JCheckBox jCheckBox1;
     private javax.swing.JComboBox jComboBox1;
     private javax.swing.JComboBox jComboBox2;
