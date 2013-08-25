@@ -69,23 +69,26 @@
             <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="33" green="33" red="33" type="rgb"/>
             </Property>
-            <Property name="text" type="java.lang.String" value="Relatorios"/>
+            <Property name="text" type="java.lang.String" value="Relat&#xf3;rios"/>
             <Property name="horizontalAlignment" type="int" value="0"/>
           </Properties>
           <SubComponents>
             <MenuItem class="javax.swing.JMenuItem" name="mi_relClieCad">
               <Properties>
-                <Property name="text" type="java.lang.String" value="Relatorio de Clientes Cadastrados"/>
+                <Property name="text" type="java.lang.String" value="Relat&#xf3;rio de Clientes Cadastrados"/>
               </Properties>
             </MenuItem>
             <MenuItem class="javax.swing.JMenuItem" name="mi_relEmpr">
               <Properties>
-                <Property name="text" type="java.lang.String" value="Relatorio de Emprestimos"/>
+                <Property name="text" type="java.lang.String" value="Relat&#xf3;rio de Empr&#xe9;stimos"/>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="mi_relEmprActionPerformed"/>
+              </Events>
             </MenuItem>
             <MenuItem class="javax.swing.JMenuItem" name="mi_relFluxTrans">
               <Properties>
-                <Property name="text" type="java.lang.String" value="Relatorio de Fluxo de Transportes"/>
+                <Property name="text" type="java.lang.String" value="Relat&#xf3;rio de Fluxo de Transportes"/>
               </Properties>
             </MenuItem>
           </SubComponents>
@@ -315,7 +318,7 @@
               <Font name="Arial" size="10" style="0"/>
             </Property>
             <Property name="horizontalAlignment" type="int" value="0"/>
-            <Property name="text" type="java.lang.String" value="REL.EMPRESTIMO"/>
+            <Property name="text" type="java.lang.String" value="REL.EMPR&#xc9;STIMO"/>
           </Properties>
         </Component>
       </SubComponents>
@@ -417,7 +420,7 @@
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="Courier New" size="18" style="1"/>
                 </Property>
-                <Property name="text" type="java.lang.String" value="Usuario:"/>
+                <Property name="text" type="java.lang.String" value="Usu&#xe1;rio:"/>
               </Properties>
             </Component>
             <Component class="javax.swing.JLabel" name="jLabel2">

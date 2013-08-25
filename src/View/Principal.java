@@ -115,7 +115,7 @@ public class Principal extends javax.swing.JFrame {
 
         jLabel6.setFont(new java.awt.Font("Arial", 0, 10)); // NOI18N
         jLabel6.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel6.setText("REL.EMPRESTIMO");
+        jLabel6.setText("REL.EMPRÉSTIMO");
 
         javax.swing.GroupLayout fundo_atalhosLayout = new javax.swing.GroupLayout(fundo_atalhos);
         fundo_atalhos.setLayout(fundo_atalhosLayout);
@@ -161,7 +161,7 @@ public class Principal extends javax.swing.JFrame {
         pnl_login.setToolTipText("Login");
 
         jLabel1.setFont(new java.awt.Font("Courier New", 1, 18)); // NOI18N
-        jLabel1.setText("Usuario:");
+        jLabel1.setText("Usuário:");
 
         jLabel2.setFont(new java.awt.Font("Courier New", 1, 18)); // NOI18N
         jLabel2.setText("Senha:");
@@ -299,16 +299,21 @@ public class Principal extends javax.swing.JFrame {
         mb_menus.add(mi_movimentacao);
 
         mi_relatorios.setForeground(new java.awt.Color(51, 51, 51));
-        mi_relatorios.setText("Relatorios");
+        mi_relatorios.setText("Relatórios");
         mi_relatorios.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
 
-        mi_relClieCad.setText("Relatorio de Clientes Cadastrados");
+        mi_relClieCad.setText("Relatório de Clientes Cadastrados");
         mi_relatorios.add(mi_relClieCad);
 
-        mi_relEmpr.setText("Relatorio de Emprestimos");
+        mi_relEmpr.setText("Relatório de Empréstimos");
+        mi_relEmpr.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                mi_relEmprActionPerformed(evt);
+            }
+        });
         mi_relatorios.add(mi_relEmpr);
 
-        mi_relFluxTrans.setText("Relatorio de Fluxo de Transportes");
+        mi_relFluxTrans.setText("Relatório de Fluxo de Transportes");
         mi_relatorios.add(mi_relFluxTrans);
 
         mb_menus.add(mi_relatorios);
@@ -353,6 +358,10 @@ public class Principal extends javax.swing.JFrame {
     private void mi_produtoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mi_produtoActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_mi_produtoActionPerformed
+
+    private void mi_relEmprActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mi_relEmprActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_mi_relEmprActionPerformed
 
     /**
      * @param args the command line arguments
