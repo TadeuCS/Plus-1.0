@@ -48,6 +48,7 @@ public class Principal extends javax.swing.JFrame {
         mi_cliente = new javax.swing.JMenuItem();
         mi_transportador = new javax.swing.JMenuItem();
         mi_veiculo = new javax.swing.JMenuItem();
+        mi_usuario = new javax.swing.JMenuItem();
         mi_movimentacao = new javax.swing.JMenu();
         mi_locacao = new javax.swing.JMenuItem();
         mi_relatorios = new javax.swing.JMenu();
@@ -55,6 +56,8 @@ public class Principal extends javax.swing.JFrame {
         mi_relEmpr = new javax.swing.JMenuItem();
         mi_relFluxTrans = new javax.swing.JMenuItem();
         mi_configuracao = new javax.swing.JMenu();
+        mi_veiculo1 = new javax.swing.JMenuItem();
+        mi_veiculo2 = new javax.swing.JMenuItem();
         mi_ajuda = new javax.swing.JMenu();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -252,7 +255,7 @@ public class Principal extends javax.swing.JFrame {
         pnl_fundoLayout.setVerticalGroup(
             pnl_fundoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnl_fundoLayout.createSequentialGroup()
-                .addContainerGap(211, Short.MAX_VALUE)
+                .addContainerGap(221, Short.MAX_VALUE)
                 .addComponent(pnl_login, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(pnl_barraStatus, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -280,6 +283,9 @@ public class Principal extends javax.swing.JFrame {
 
         mi_veiculo.setText("Veículo");
         menuCadastro.add(mi_veiculo);
+
+        mi_usuario.setText("Usuario");
+        menuCadastro.add(mi_usuario);
 
         mb_menus.add(menuCadastro);
 
@@ -310,6 +316,13 @@ public class Principal extends javax.swing.JFrame {
         mi_configuracao.setForeground(new java.awt.Color(51, 51, 51));
         mi_configuracao.setText("Configuração");
         mi_configuracao.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+
+        mi_veiculo1.setText("Parametrização");
+        mi_configuracao.add(mi_veiculo1);
+
+        mi_veiculo2.setText("Permissões");
+        mi_configuracao.add(mi_veiculo2);
+
         mb_menus.add(mi_configuracao);
 
         mi_ajuda.setForeground(new java.awt.Color(51, 51, 51));
@@ -330,7 +343,7 @@ public class Principal extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addComponent(fundo_atalhos, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 8, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(pnl_fundo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
@@ -405,7 +418,10 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JMenuItem mi_relFluxTrans;
     private javax.swing.JMenu mi_relatorios;
     private javax.swing.JMenuItem mi_transportador;
+    private javax.swing.JMenuItem mi_usuario;
     private javax.swing.JMenuItem mi_veiculo;
+    private javax.swing.JMenuItem mi_veiculo1;
+    private javax.swing.JMenuItem mi_veiculo2;
     private javax.swing.JPanel pnl_barraStatus;
     private javax.swing.JPanel pnl_fundo;
     private javax.swing.JPanel pnl_login;

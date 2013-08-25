@@ -41,6 +41,11 @@
                 <Property name="text" type="java.lang.String" value="Ve&#xed;culo"/>
               </Properties>
             </MenuItem>
+            <MenuItem class="javax.swing.JMenuItem" name="mi_usuario">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Usuario"/>
+              </Properties>
+            </MenuItem>
           </SubComponents>
         </Menu>
         <Menu class="javax.swing.JMenu" name="mi_movimentacao">
@@ -93,6 +98,18 @@
             <Property name="text" type="java.lang.String" value="Configura&#xe7;&#xe3;o"/>
             <Property name="horizontalAlignment" type="int" value="0"/>
           </Properties>
+          <SubComponents>
+            <MenuItem class="javax.swing.JMenuItem" name="mi_veiculo1">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Parametriza&#xe7;&#xe3;o"/>
+              </Properties>
+            </MenuItem>
+            <MenuItem class="javax.swing.JMenuItem" name="mi_veiculo2">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Permiss&#xf5;es"/>
+              </Properties>
+            </MenuItem>
+          </SubComponents>
         </Menu>
         <Menu class="javax.swing.JMenu" name="mi_ajuda">
           <Properties>
@@ -138,7 +155,7 @@
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="102" attributes="0">
               <Component id="fundo_atalhos" min="-2" max="-2" attributes="0"/>
-              <EmptySpace pref="8" max="32767" attributes="0"/>
+              <EmptySpace max="32767" attributes="0"/>
               <Component id="pnl_fundo" min="-2" max="-2" attributes="0"/>
           </Group>
       </Group>
@@ -319,7 +336,7 @@
         <DimensionLayout dim="1">
           <Group type="103" groupAlignment="0" attributes="0">
               <Group type="102" alignment="1" attributes="0">
-                  <EmptySpace pref="211" max="32767" attributes="0"/>
+                  <EmptySpace pref="221" max="32767" attributes="0"/>
                   <Component id="pnl_login" min="-2" max="-2" attributes="0"/>
                   <EmptySpace type="unrelated" max="-2" attributes="0"/>
                   <Component id="pnl_barraStatus" min="-2" max="-2" attributes="0"/>
