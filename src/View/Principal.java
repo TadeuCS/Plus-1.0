@@ -56,9 +56,6 @@ public class Principal extends javax.swing.JFrame {
         mi_relClieCad = new javax.swing.JMenuItem();
         mi_relEmpr = new javax.swing.JMenuItem();
         mi_relFluxTrans = new javax.swing.JMenuItem();
-        mi_configuracao = new javax.swing.JMenu();
-        mi_veiculo1 = new javax.swing.JMenuItem();
-        mi_veiculo2 = new javax.swing.JMenuItem();
         mi_ajuda = new javax.swing.JMenu();
         mi_help = new javax.swing.JMenuItem();
 
@@ -390,30 +387,6 @@ public class Principal extends javax.swing.JFrame {
 
         mb_menus.add(mi_relatorios);
 
-        mi_configuracao.setForeground(new java.awt.Color(51, 51, 51));
-        mi_configuracao.setText("Configuração");
-        mi_configuracao.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-
-        mi_veiculo1.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_P, java.awt.event.InputEvent.ALT_MASK | java.awt.event.InputEvent.CTRL_MASK));
-        mi_veiculo1.setText("Parametros");
-        mi_veiculo1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                mi_veiculo1ActionPerformed(evt);
-            }
-        });
-        mi_configuracao.add(mi_veiculo1);
-
-        mi_veiculo2.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_M, java.awt.event.InputEvent.ALT_MASK | java.awt.event.InputEvent.CTRL_MASK));
-        mi_veiculo2.setText("Permissões");
-        mi_veiculo2.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                mi_veiculo2ActionPerformed(evt);
-            }
-        });
-        mi_configuracao.add(mi_veiculo2);
-
-        mb_menus.add(mi_configuracao);
-
         mi_ajuda.setForeground(new java.awt.Color(51, 51, 51));
         mi_ajuda.setText("Ajuda");
         mi_ajuda.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -512,14 +485,6 @@ public class Principal extends javax.swing.JFrame {
         f.setVisible(true);
     }//GEN-LAST:event_mi_relFluxTransActionPerformed
 
-    private void mi_veiculo1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mi_veiculo1ActionPerformed
-        System.out.println("gerar tela de parametros");
-    }//GEN-LAST:event_mi_veiculo1ActionPerformed
-
-    private void mi_veiculo2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mi_veiculo2ActionPerformed
-        System.out.println("gerar tela de permissões para usuarios cadastrados");
-    }//GEN-LAST:event_mi_veiculo2ActionPerformed
-
     private void mi_helpActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mi_helpActionPerformed
         System.out.println("menu ajuda");
     }//GEN-LAST:event_mi_helpActionPerformed
@@ -580,7 +545,6 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JMenu menuCadastro;
     private javax.swing.JMenu mi_ajuda;
     private javax.swing.JMenuItem mi_cliente;
-    private javax.swing.JMenu mi_configuracao;
     private javax.swing.JMenuItem mi_help;
     private javax.swing.JMenuItem mi_locacao;
     private javax.swing.JMenu mi_movimentacao;
@@ -592,8 +556,6 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JMenuItem mi_transportador;
     private javax.swing.JMenuItem mi_usuario;
     private javax.swing.JMenuItem mi_veiculo;
-    private javax.swing.JMenuItem mi_veiculo1;
-    private javax.swing.JMenuItem mi_veiculo2;
     private javax.swing.JPanel pnl_barraStatus;
     private javax.swing.JPanel pnl_fundo;
     private javax.swing.JPanel pnl_login;
