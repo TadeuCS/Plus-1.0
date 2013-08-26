@@ -28,7 +28,7 @@ public class Principal extends javax.swing.JFrame {
         jLabel4 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
         atalho_locacao = new javax.swing.JPanel();
-        atalho_emprestimos = new javax.swing.JPanel();
+        atalho_rel_empr = new javax.swing.JPanel();
         jLabel6 = new javax.swing.JLabel();
         pnl_fundo = new javax.swing.JPanel();
         pnl_login = new javax.swing.JPanel();
@@ -59,6 +59,7 @@ public class Principal extends javax.swing.JFrame {
         mi_veiculo1 = new javax.swing.JMenuItem();
         mi_veiculo2 = new javax.swing.JMenuItem();
         mi_ajuda = new javax.swing.JMenu();
+        mi_help = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Plus 1.0");
@@ -67,6 +68,11 @@ public class Principal extends javax.swing.JFrame {
         fundo_atalhos.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
 
         atalho_clientes.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        atalho_clientes.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                atalho_clientesMouseClicked(evt);
+            }
+        });
 
         javax.swing.GroupLayout atalho_clientesLayout = new javax.swing.GroupLayout(atalho_clientes);
         atalho_clientes.setLayout(atalho_clientesLayout);
@@ -88,6 +94,11 @@ public class Principal extends javax.swing.JFrame {
         jLabel5.setText("LOCAÇÃO");
 
         atalho_locacao.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        atalho_locacao.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                atalho_locacaoMouseClicked(evt);
+            }
+        });
 
         javax.swing.GroupLayout atalho_locacaoLayout = new javax.swing.GroupLayout(atalho_locacao);
         atalho_locacao.setLayout(atalho_locacaoLayout);
@@ -100,16 +111,21 @@ public class Principal extends javax.swing.JFrame {
             .addGap(0, 0, Short.MAX_VALUE)
         );
 
-        atalho_emprestimos.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        atalho_rel_empr.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        atalho_rel_empr.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                atalho_rel_emprMouseClicked(evt);
+            }
+        });
 
-        javax.swing.GroupLayout atalho_emprestimosLayout = new javax.swing.GroupLayout(atalho_emprestimos);
-        atalho_emprestimos.setLayout(atalho_emprestimosLayout);
-        atalho_emprestimosLayout.setHorizontalGroup(
-            atalho_emprestimosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        javax.swing.GroupLayout atalho_rel_emprLayout = new javax.swing.GroupLayout(atalho_rel_empr);
+        atalho_rel_empr.setLayout(atalho_rel_emprLayout);
+        atalho_rel_emprLayout.setHorizontalGroup(
+            atalho_rel_emprLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGap(0, 0, Short.MAX_VALUE)
         );
-        atalho_emprestimosLayout.setVerticalGroup(
-            atalho_emprestimosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        atalho_rel_emprLayout.setVerticalGroup(
+            atalho_rel_emprLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGap(0, 66, Short.MAX_VALUE)
         );
 
@@ -132,7 +148,7 @@ public class Principal extends javax.swing.JFrame {
                     .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 96, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(fundo_atalhosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(atalho_emprestimos, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(atalho_rel_empr, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 96, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
@@ -142,7 +158,7 @@ public class Principal extends javax.swing.JFrame {
                 .addContainerGap()
                 .addGroup(fundo_atalhosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(fundo_atalhosLayout.createSequentialGroup()
-                        .addComponent(atalho_emprestimos, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(atalho_rel_empr, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jLabel6))
                     .addGroup(fundo_atalhosLayout.createSequentialGroup()
@@ -169,6 +185,11 @@ public class Principal extends javax.swing.JFrame {
         btn_entrar.setText("Entrar");
 
         btn_sair.setText("Sair");
+        btn_sair.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_sairActionPerformed(evt);
+            }
+        });
 
         jLabel3.setFont(new java.awt.Font("Times New Roman", 0, 24)); // NOI18N
         jLabel3.setText("LOGIN");
@@ -267,6 +288,7 @@ public class Principal extends javax.swing.JFrame {
         menuCadastro.setText("Cadastro");
         menuCadastro.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
 
+        mi_produto.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_P, java.awt.event.InputEvent.ALT_MASK));
         mi_produto.setText("Produto");
         mi_produto.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -275,16 +297,40 @@ public class Principal extends javax.swing.JFrame {
         });
         menuCadastro.add(mi_produto);
 
+        mi_cliente.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_C, java.awt.event.InputEvent.ALT_MASK));
         mi_cliente.setText("Cliente");
+        mi_cliente.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                mi_clienteActionPerformed(evt);
+            }
+        });
         menuCadastro.add(mi_cliente);
 
+        mi_transportador.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_T, java.awt.event.InputEvent.ALT_MASK));
         mi_transportador.setText("Transportador");
+        mi_transportador.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                mi_transportadorActionPerformed(evt);
+            }
+        });
         menuCadastro.add(mi_transportador);
 
+        mi_veiculo.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_V, java.awt.event.InputEvent.ALT_MASK));
         mi_veiculo.setText("Veículo");
+        mi_veiculo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                mi_veiculoActionPerformed(evt);
+            }
+        });
         menuCadastro.add(mi_veiculo);
 
+        mi_usuario.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_U, java.awt.event.InputEvent.ALT_MASK));
         mi_usuario.setText("Usuario");
+        mi_usuario.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                mi_usuarioActionPerformed(evt);
+            }
+        });
         menuCadastro.add(mi_usuario);
 
         mb_menus.add(menuCadastro);
@@ -293,7 +339,13 @@ public class Principal extends javax.swing.JFrame {
         mi_movimentacao.setText("Movimentações");
         mi_movimentacao.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
 
+        mi_locacao.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_L, java.awt.event.InputEvent.ALT_MASK));
         mi_locacao.setText("Locação");
+        mi_locacao.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                mi_locacaoActionPerformed(evt);
+            }
+        });
         mi_movimentacao.add(mi_locacao);
 
         mb_menus.add(mi_movimentacao);
@@ -302,9 +354,16 @@ public class Principal extends javax.swing.JFrame {
         mi_relatorios.setText("Relatórios");
         mi_relatorios.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
 
+        mi_relClieCad.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_C, java.awt.event.InputEvent.ALT_MASK | java.awt.event.InputEvent.CTRL_MASK));
         mi_relClieCad.setText("Relatório de Clientes Cadastrados");
+        mi_relClieCad.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                mi_relClieCadActionPerformed(evt);
+            }
+        });
         mi_relatorios.add(mi_relClieCad);
 
+        mi_relEmpr.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_E, java.awt.event.InputEvent.ALT_MASK | java.awt.event.InputEvent.CTRL_MASK));
         mi_relEmpr.setText("Relatório de Empréstimos");
         mi_relEmpr.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -313,7 +372,13 @@ public class Principal extends javax.swing.JFrame {
         });
         mi_relatorios.add(mi_relEmpr);
 
+        mi_relFluxTrans.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_F, java.awt.event.InputEvent.ALT_MASK | java.awt.event.InputEvent.CTRL_MASK));
         mi_relFluxTrans.setText("Relatório de Fluxo de Transportes");
+        mi_relFluxTrans.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                mi_relFluxTransActionPerformed(evt);
+            }
+        });
         mi_relatorios.add(mi_relFluxTrans);
 
         mb_menus.add(mi_relatorios);
@@ -322,10 +387,22 @@ public class Principal extends javax.swing.JFrame {
         mi_configuracao.setText("Configuração");
         mi_configuracao.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
 
-        mi_veiculo1.setText("Parametrização");
+        mi_veiculo1.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_P, java.awt.event.InputEvent.ALT_MASK | java.awt.event.InputEvent.CTRL_MASK));
+        mi_veiculo1.setText("Parametros");
+        mi_veiculo1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                mi_veiculo1ActionPerformed(evt);
+            }
+        });
         mi_configuracao.add(mi_veiculo1);
 
+        mi_veiculo2.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_M, java.awt.event.InputEvent.ALT_MASK | java.awt.event.InputEvent.CTRL_MASK));
         mi_veiculo2.setText("Permissões");
+        mi_veiculo2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                mi_veiculo2ActionPerformed(evt);
+            }
+        });
         mi_configuracao.add(mi_veiculo2);
 
         mb_menus.add(mi_configuracao);
@@ -333,6 +410,16 @@ public class Principal extends javax.swing.JFrame {
         mi_ajuda.setForeground(new java.awt.Color(51, 51, 51));
         mi_ajuda.setText("Ajuda");
         mi_ajuda.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+
+        mi_help.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_F1, 0));
+        mi_help.setText("Help");
+        mi_help.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                mi_helpActionPerformed(evt);
+            }
+        });
+        mi_ajuda.add(mi_help);
+
         mb_menus.add(mi_ajuda);
 
         setJMenuBar(mb_menus);
@@ -356,12 +443,79 @@ public class Principal extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void mi_produtoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mi_produtoActionPerformed
-        // TODO add your handling code here:
+        Cad_Produto c= new Cad_Produto();
+        c.setVisible(true);
     }//GEN-LAST:event_mi_produtoActionPerformed
 
     private void mi_relEmprActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mi_relEmprActionPerformed
-        // TODO add your handling code here:
+        Rel_Empr r1= new Rel_Empr();
+        r1.setVisible(true);
     }//GEN-LAST:event_mi_relEmprActionPerformed
+
+    private void btn_sairActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_sairActionPerformed
+        setVisible(false);
+    }//GEN-LAST:event_btn_sairActionPerformed
+
+    private void atalho_clientesMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_atalho_clientesMouseClicked
+        Cad_Cliente c= new Cad_Cliente();
+        c.setVisible(true);
+    }//GEN-LAST:event_atalho_clientesMouseClicked
+
+    private void atalho_locacaoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_atalho_locacaoMouseClicked
+        Locação l= new Locação();
+        l.setVisible(true);
+    }//GEN-LAST:event_atalho_locacaoMouseClicked
+
+    private void atalho_rel_emprMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_atalho_rel_emprMouseClicked
+        Rel_Empr r= new Rel_Empr();
+        r.setVisible(true);
+    }//GEN-LAST:event_atalho_rel_emprMouseClicked
+
+    private void mi_clienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mi_clienteActionPerformed
+        Cad_Cliente c= new Cad_Cliente();
+        c.setVisible(true);
+    }//GEN-LAST:event_mi_clienteActionPerformed
+
+    private void mi_transportadorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mi_transportadorActionPerformed
+        Cad_Transportador t= new Cad_Transportador();
+        t.setVisible(true);
+    }//GEN-LAST:event_mi_transportadorActionPerformed
+
+    private void mi_veiculoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mi_veiculoActionPerformed
+        Cad_Veiculo v= new Cad_Veiculo();
+        v.setVisible(true);
+    }//GEN-LAST:event_mi_veiculoActionPerformed
+
+    private void mi_usuarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mi_usuarioActionPerformed
+        Cad_Usuario u= new Cad_Usuario();
+        u.setVisible(true);
+    }//GEN-LAST:event_mi_usuarioActionPerformed
+
+    private void mi_locacaoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mi_locacaoActionPerformed
+        Locação l= new Locação();
+        l.setVisible(true);
+    }//GEN-LAST:event_mi_locacaoActionPerformed
+
+    private void mi_relClieCadActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mi_relClieCadActionPerformed
+        System.out.println("gerar relatorio de clientes cadastrados");
+    }//GEN-LAST:event_mi_relClieCadActionPerformed
+
+    private void mi_relFluxTransActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mi_relFluxTransActionPerformed
+        Rel_Fluxo_trans f= new Rel_Fluxo_trans();
+        f.setVisible(true);
+    }//GEN-LAST:event_mi_relFluxTransActionPerformed
+
+    private void mi_veiculo1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mi_veiculo1ActionPerformed
+        System.out.println("gerar tela de parametros");
+    }//GEN-LAST:event_mi_veiculo1ActionPerformed
+
+    private void mi_veiculo2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mi_veiculo2ActionPerformed
+        System.out.println("gerar tela de permissões para usuarios cadastrados");
+    }//GEN-LAST:event_mi_veiculo2ActionPerformed
+
+    private void mi_helpActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mi_helpActionPerformed
+        System.out.println("menu ajuda");
+    }//GEN-LAST:event_mi_helpActionPerformed
 
     /**
      * @param args the command line arguments
@@ -402,8 +556,8 @@ public class Principal extends javax.swing.JFrame {
     }
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel atalho_clientes;
-    private javax.swing.JPanel atalho_emprestimos;
     private javax.swing.JPanel atalho_locacao;
+    private javax.swing.JPanel atalho_rel_empr;
     private javax.swing.JButton btn_entrar;
     private javax.swing.JButton btn_sair;
     private javax.swing.JPanel fundo_atalhos;
@@ -419,6 +573,7 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JMenu mi_ajuda;
     private javax.swing.JMenuItem mi_cliente;
     private javax.swing.JMenu mi_configuracao;
+    private javax.swing.JMenuItem mi_help;
     private javax.swing.JMenuItem mi_locacao;
     private javax.swing.JMenu mi_movimentacao;
     private javax.swing.JMenuItem mi_produto;

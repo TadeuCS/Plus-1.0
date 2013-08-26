@@ -152,6 +152,7 @@ public class Rel_Fluxo_trans extends javax.swing.JFrame {
         );
 
         pack();
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     /**
