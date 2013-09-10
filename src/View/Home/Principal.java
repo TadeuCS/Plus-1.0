@@ -2,21 +2,43 @@
  * To change this template, choose Tools | Templates
  * and open the template in the editor.
  */
-package View;
+package View.Home;
 
+import View.Cadastros.Cad_Locação;
+import View.Relatorios.Rel_Empr;
+import View.Relatorios.Rel_Fluxo_trans;
+import View.Cadastros.Cad_Produto;
+import View.Cadastros.Cad_Cliente;
+import View.Cadastros.Cad_Usuario;
+import View.Cadastros.Cad_Transportador;
+import Ctrl.Conexao;
+import View.Cadastros.Cad_Veiculo;
+import java.sql.Connection;
+import java.sql.SQLException;
+import java.sql.Statement;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.JFrame;
+import javax.swing.JOptionPane;
 
 /**
  *
  * @author Tadeu
  */
 public class Principal extends javax.swing.JFrame {
-
-    /**
-     * Creates new form Principal
-     */
+    Conexao conexao= new Conexao();
+    static Connection con;
+    static Statement st;
     public Principal() {
+        
         initComponents();
+        setExtendedState(JFrame.MAXIMIZED_BOTH);
+        try{
+        con=conexao.getCon();
+        st=conexao.getSt();
+        }catch(Exception e){
+            System.out.println("erro: "+e);
+        }
     }
 
     @SuppressWarnings("unchecked")
@@ -61,6 +83,11 @@ public class Principal extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Plus 1.0");
+        addWindowListener(new java.awt.event.WindowAdapter() {
+            public void windowClosed(java.awt.event.WindowEvent evt) {
+                formWindowClosed(evt);
+            }
+        });
 
         fundo_atalhos.setBackground(new java.awt.Color(204, 204, 204));
         fundo_atalhos.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
@@ -423,56 +450,61 @@ public class Principal extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void mi_produtoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mi_produtoActionPerformed
-        Cad_Produto c= new Cad_Produto();
-        c.setVisible(true);
+        Cad_Produto p = new Cad_Produto();
+        p.setVisible(true);
     }//GEN-LAST:event_mi_produtoActionPerformed
 
     private void mi_relEmprActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mi_relEmprActionPerformed
-        Rel_Empr r1= new Rel_Empr();
+        Rel_Empr r1 = new Rel_Empr();
         r1.setVisible(true);
     }//GEN-LAST:event_mi_relEmprActionPerformed
 
     private void btn_sairActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_sairActionPerformed
+        try {
+        conexao.Desconecta();
         setVisible(false);
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(null, e.getMessage());
+        }
     }//GEN-LAST:event_btn_sairActionPerformed
 
     private void atalho_clientesMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_atalho_clientesMouseClicked
-        Cad_Cliente c= new Cad_Cliente();
-        c.setVisible(true);
+        Cad_Cliente l = new Cad_Cliente();
+        l.setVisible(true);
     }//GEN-LAST:event_atalho_clientesMouseClicked
 
     private void atalho_locacaoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_atalho_locacaoMouseClicked
-        Locação l= new Locação();
+        Cad_Locação l = new Cad_Locação();
         l.setVisible(true);
     }//GEN-LAST:event_atalho_locacaoMouseClicked
 
     private void atalho_rel_emprMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_atalho_rel_emprMouseClicked
-        Rel_Empr r= new Rel_Empr();
+        Rel_Empr r = new Rel_Empr();
         r.setVisible(true);
     }//GEN-LAST:event_atalho_rel_emprMouseClicked
 
     private void mi_clienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mi_clienteActionPerformed
-        Cad_Cliente c= new Cad_Cliente();
+        Cad_Cliente c = new Cad_Cliente();
         c.setVisible(true);
     }//GEN-LAST:event_mi_clienteActionPerformed
 
     private void mi_transportadorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mi_transportadorActionPerformed
-        Cad_Transportador t= new Cad_Transportador();
+        Cad_Transportador t = new Cad_Transportador();
         t.setVisible(true);
     }//GEN-LAST:event_mi_transportadorActionPerformed
 
     private void mi_veiculoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mi_veiculoActionPerformed
-        Cad_Veiculo v= new Cad_Veiculo();
+        Cad_Veiculo v = new Cad_Veiculo();
         v.setVisible(true);
     }//GEN-LAST:event_mi_veiculoActionPerformed
 
     private void mi_usuarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mi_usuarioActionPerformed
-        Cad_Usuario u= new Cad_Usuario();
+        Cad_Usuario u = new Cad_Usuario();
         u.setVisible(true);
     }//GEN-LAST:event_mi_usuarioActionPerformed
 
     private void mi_locacaoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mi_locacaoActionPerformed
-        Locação l= new Locação();
+        Cad_Locação l = new Cad_Locação();
         l.setVisible(true);
     }//GEN-LAST:event_mi_locacaoActionPerformed
 
@@ -481,13 +513,17 @@ public class Principal extends javax.swing.JFrame {
     }//GEN-LAST:event_mi_relClieCadActionPerformed
 
     private void mi_relFluxTransActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mi_relFluxTransActionPerformed
-        Rel_Fluxo_trans f= new Rel_Fluxo_trans();
+        Rel_Fluxo_trans f = new Rel_Fluxo_trans();
         f.setVisible(true);
     }//GEN-LAST:event_mi_relFluxTransActionPerformed
 
     private void mi_helpActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mi_helpActionPerformed
         System.out.println("menu ajuda");
     }//GEN-LAST:event_mi_helpActionPerformed
+
+    private void formWindowClosed(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowClosed
+        conexao.Desconecta();
+    }//GEN-LAST:event_formWindowClosed
 
     /**
      * @param args the command line arguments
@@ -519,10 +555,8 @@ public class Principal extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                Principal p = new Principal();
-                p.setExtendedState(JFrame.MAXIMIZED_BOTH);
-                p.setVisible(true);
-
+                Conexao c= new Conexao();
+                c.Conecta();
             }
         });
     }

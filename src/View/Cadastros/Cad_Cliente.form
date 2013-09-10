@@ -11,6 +11,9 @@
     <SyntheticProperty name="generateSize" type="boolean" value="false"/>
     <SyntheticProperty name="generateCenter" type="boolean" value="true"/>
   </SyntheticProperties>
+  <Events>
+    <EventHandler event="windowClosed" listener="java.awt.event.WindowListener" parameters="java.awt.event.WindowEvent" handler="formWindowClosed"/>
+  </Events>
   <AuxValues>
     <AuxValue name="FormSettings_autoResourcing" type="java.lang.Integer" value="0"/>
     <AuxValue name="FormSettings_autoSetComponentName" type="java.lang.Boolean" value="false"/>
@@ -297,16 +300,16 @@
             <DimensionLayout dim="0">
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" alignment="0" attributes="0">
-                      <EmptySpace max="32767" attributes="0"/>
+                      <EmptySpace pref="21" max="32767" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Group type="102" alignment="1" attributes="0">
                               <Component id="jLabel3" min="-2" max="-2" attributes="0"/>
                               <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                              <Component id="txt_cep" min="-2" pref="69" max="-2" attributes="0"/>
+                              <Component id="txt_cep_cob" min="-2" pref="69" max="-2" attributes="0"/>
                               <EmptySpace type="separate" max="-2" attributes="0"/>
                               <Component id="jLabel12" min="-2" max="-2" attributes="0"/>
                               <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                              <Component id="jComboBox2" min="-2" max="-2" attributes="0"/>
+                              <Component id="cbx_uf_cob" min="-2" max="-2" attributes="0"/>
                               <EmptySpace type="separate" max="-2" attributes="0"/>
                               <Component id="jLabel11" min="-2" max="-2" attributes="0"/>
                           </Group>
@@ -318,12 +321,12 @@
                               <EmptySpace type="unrelated" max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="0" attributes="0">
                                   <Group type="102" alignment="1" attributes="0">
-                                      <Component id="txt_bairro" min="-2" pref="132" max="-2" attributes="0"/>
+                                      <Component id="txt_bairro_cob" min="-2" pref="132" max="-2" attributes="0"/>
                                       <EmptySpace type="separate" max="-2" attributes="0"/>
                                       <Component id="jLabel15" min="-2" max="-2" attributes="0"/>
                                   </Group>
                                   <Group type="102" alignment="1" attributes="0">
-                                      <Component id="txt_numero" min="-2" pref="122" max="-2" attributes="0"/>
+                                      <Component id="txt_numero_cob" min="-2" pref="122" max="-2" attributes="0"/>
                                       <EmptySpace type="separate" max="-2" attributes="0"/>
                                       <Component id="jLabel17" min="-2" max="-2" attributes="0"/>
                                   </Group>
@@ -332,9 +335,9 @@
                       </Group>
                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                          <Component id="txt_complemento" alignment="0" pref="375" max="32767" attributes="0"/>
-                          <Component id="txt_logradouro" alignment="0" max="32767" attributes="0"/>
-                          <Component id="txt_cidade" alignment="0" max="32767" attributes="0"/>
+                          <Component id="txt_complemento_cob" alignment="0" pref="375" max="32767" attributes="0"/>
+                          <Component id="txt_logradouro_cob" alignment="0" max="32767" attributes="0"/>
+                          <Component id="txt_cidade_cob" alignment="0" max="32767" attributes="0"/>
                       </Group>
                       <EmptySpace max="-2" attributes="0"/>
                   </Group>
@@ -345,31 +348,31 @@
                   <Group type="102" alignment="0" attributes="0">
                       <EmptySpace max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="txt_cidade" alignment="0" max="32767" attributes="0"/>
+                          <Component id="txt_cidade_cob" alignment="0" max="32767" attributes="0"/>
                           <Group type="103" groupAlignment="3" attributes="0">
                               <Component id="jLabel12" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="txt_cep" alignment="3" min="-2" max="-2" attributes="0"/>
                               <Component id="jLabel3" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="jComboBox2" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="cbx_uf_cob" alignment="3" min="-2" max="-2" attributes="0"/>
                               <Component id="jLabel11" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="txt_cep_cob" alignment="3" max="32767" attributes="0"/>
                           </Group>
                       </Group>
                       <EmptySpace max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="txt_logradouro" alignment="0" max="32767" attributes="0"/>
+                          <Component id="txt_logradouro_cob" alignment="0" max="32767" attributes="0"/>
                           <Group type="103" groupAlignment="3" attributes="0">
-                              <Component id="txt_bairro" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="txt_bairro_cob" alignment="3" min="-2" max="-2" attributes="0"/>
                               <Component id="jLabel14" alignment="3" min="-2" max="-2" attributes="0"/>
                               <Component id="jLabel15" alignment="3" min="-2" max="-2" attributes="0"/>
                           </Group>
                       </Group>
                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="txt_complemento" alignment="0" max="32767" attributes="0"/>
+                          <Component id="txt_complemento_cob" alignment="0" max="32767" attributes="0"/>
                           <Group type="103" groupAlignment="3" attributes="0">
                               <Component id="jLabel16" alignment="3" min="-2" max="-2" attributes="0"/>
                               <Component id="jLabel17" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="txt_numero" alignment="3" max="32767" attributes="0"/>
+                              <Component id="txt_numero_cob" alignment="3" max="32767" attributes="0"/>
                           </Group>
                       </Group>
                       <EmptySpace min="-2" max="-2" attributes="0"/>
@@ -383,23 +386,14 @@
                 <Property name="text" type="java.lang.String" value="CEP:"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JFormattedTextField" name="txt_cep">
-              <Properties>
-                <Property name="formatterFactory" type="javax.swing.JFormattedTextField$AbstractFormatterFactory" editor="org.netbeans.modules.form.editors.AbstractFormatterFactoryEditor" preCode="try {" postCode="} catch (java.text.ParseException ex) {&#xa;ex.printStackTrace();&#xa;}">
-                  <Format format="#####-###" subtype="-1" type="5"/>
-                </Property>
-                <Property name="text" type="java.lang.String" value=""/>
-                <Property name="toolTipText" type="java.lang.String" value=""/>
-              </Properties>
-            </Component>
             <Component class="javax.swing.JLabel" name="jLabel11">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Cidade:"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JTextField" name="txt_cidade">
+            <Component class="javax.swing.JTextField" name="txt_cidade_cob">
             </Component>
-            <Component class="javax.swing.JComboBox" name="jComboBox2">
+            <Component class="javax.swing.JComboBox" name="cbx_uf_cob">
               <Properties>
                 <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
                   <StringArray count="1">
@@ -418,28 +412,33 @@
                 <Property name="text" type="java.lang.String" value="Bairro:"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JTextField" name="txt_bairro">
+            <Component class="javax.swing.JTextField" name="txt_bairro_cob">
             </Component>
             <Component class="javax.swing.JLabel" name="jLabel15">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Logradouro:"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JTextField" name="txt_logradouro">
+            <Component class="javax.swing.JTextField" name="txt_logradouro_cob">
             </Component>
             <Component class="javax.swing.JLabel" name="jLabel16">
               <Properties>
                 <Property name="text" type="java.lang.String" value="N&#xfa;mero:"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JTextField" name="txt_numero">
+            <Component class="javax.swing.JTextField" name="txt_numero_cob">
             </Component>
             <Component class="javax.swing.JLabel" name="jLabel17">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Complemento:"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JTextField" name="txt_complemento">
+            <Component class="javax.swing.JTextField" name="txt_complemento_cob">
+            </Component>
+            <Component class="javax.swing.JTextField" name="txt_cep_cob">
+              <Events>
+                <EventHandler event="keyPressed" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="txt_cep_cobKeyPressed"/>
+              </Events>
             </Component>
           </SubComponents>
         </Container>

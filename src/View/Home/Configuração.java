@@ -2,7 +2,7 @@
  * To change this template, choose Tools | Templates
  * and open the template in the editor.
  */
-package View;
+package View.Home;
 
 import java.io.File;
 import javax.swing.JFileChooser;
@@ -32,20 +32,6 @@ public class Configuração extends javax.swing.JFrame {
         pnl_fundo = new javax.swing.JPanel();
         pnl_abas = new javax.swing.JPanel();
         fundo_abas = new javax.swing.JTabbedPane();
-        aba_conexão = new javax.swing.JPanel();
-        jLabel1 = new javax.swing.JLabel();
-        jComboBox1 = new javax.swing.JComboBox();
-        jLabel2 = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
-        jLabel3 = new javax.swing.JLabel();
-        txt_diretorio = new javax.swing.JTextField();
-        btn_buscar = new javax.swing.JToggleButton();
-        jLabel4 = new javax.swing.JLabel();
-        txt_diretorio1 = new javax.swing.JTextField();
-        jLabel5 = new javax.swing.JLabel();
-        txt_diretorio2 = new javax.swing.JTextField();
-        btn_cancelar1 = new javax.swing.JButton();
-        lb_msg_conexão = new javax.swing.JLabel();
         aba_permissão = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
         jTable1 = new javax.swing.JTable();
@@ -88,102 +74,7 @@ public class Configuração extends javax.swing.JFrame {
 
         pnl_abas.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
 
-        jLabel1.setText("Tipo de Conexão:");
-
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Local", "Remoto" }));
-
-        jLabel2.setText("Ip Remoto:");
-
-        jTextField1.setEditable(false);
-
-        jLabel3.setText("Diretorio DB:");
-
-        btn_buscar.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btn_buscarActionPerformed(evt);
-            }
-        });
-
-        jLabel4.setText("User Name:");
-
-        jLabel5.setText("Password:");
-
-        btn_cancelar1.setFont(new java.awt.Font("Courier New", 0, 12)); // NOI18N
-        btn_cancelar1.setText("Testar");
-
-        lb_msg_conexão.setForeground(new java.awt.Color(0, 51, 204));
-        lb_msg_conexão.setText("Conexão Bem Sucedida!");
-
-        javax.swing.GroupLayout aba_conexãoLayout = new javax.swing.GroupLayout(aba_conexão);
-        aba_conexão.setLayout(aba_conexãoLayout);
-        aba_conexãoLayout.setHorizontalGroup(
-            aba_conexãoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(aba_conexãoLayout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(aba_conexãoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(aba_conexãoLayout.createSequentialGroup()
-                        .addGroup(aba_conexãoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel1)
-                            .addComponent(jLabel4, javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jLabel3, javax.swing.GroupLayout.Alignment.TRAILING))
-                        .addGap(18, 18, 18)
-                        .addGroup(aba_conexãoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, aba_conexãoLayout.createSequentialGroup()
-                                .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, 104, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(18, 18, 18)
-                                .addComponent(jLabel2)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(jTextField1, javax.swing.GroupLayout.DEFAULT_SIZE, 190, Short.MAX_VALUE))
-                            .addGroup(aba_conexãoLayout.createSequentialGroup()
-                                .addGroup(aba_conexãoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addGroup(aba_conexãoLayout.createSequentialGroup()
-                                        .addComponent(txt_diretorio1, javax.swing.GroupLayout.PREFERRED_SIZE, 126, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                        .addComponent(jLabel5)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                        .addComponent(txt_diretorio2, javax.swing.GroupLayout.PREFERRED_SIZE, 126, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                    .addComponent(txt_diretorio))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(btn_buscar, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addContainerGap())
-                    .addGroup(aba_conexãoLayout.createSequentialGroup()
-                        .addGap(24, 24, 24)
-                        .addComponent(lb_msg_conexão, javax.swing.GroupLayout.PREFERRED_SIZE, 353, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, aba_conexãoLayout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(btn_cancelar1)
-                .addGap(24, 24, 24))
-        );
-        aba_conexãoLayout.setVerticalGroup(
-            aba_conexãoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(aba_conexãoLayout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(aba_conexãoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel1)
-                    .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel2)
-                    .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(aba_conexãoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addGroup(aba_conexãoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(jLabel3)
-                        .addComponent(txt_diretorio))
-                    .addComponent(btn_buscar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(aba_conexãoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel4)
-                    .addComponent(txt_diretorio1)
-                    .addComponent(jLabel5)
-                    .addComponent(txt_diretorio2))
-                .addGap(102, 102, 102)
-                .addGroup(aba_conexãoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(btn_cancelar1, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(lb_msg_conexão, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addContainerGap())
-        );
-
-        fundo_abas.addTab("Conexão", aba_conexão);
+        aba_permissão.setEnabled(false);
 
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -274,6 +165,8 @@ public class Configuração extends javax.swing.JFrame {
         );
 
         fundo_abas.addTab("Permissão", aba_permissão);
+
+        aba_parametros.setEnabled(false);
 
         jPanel2.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
 
@@ -389,6 +282,8 @@ public class Configuração extends javax.swing.JFrame {
         );
 
         fundo_abas.addTab("Parametros", aba_parametros);
+
+        aba_licença.setEnabled(false);
 
         jTextArea1.setColumns(20);
         jTextArea1.setRows(5);
@@ -519,16 +414,6 @@ public class Configuração extends javax.swing.JFrame {
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
-    private void btn_buscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_buscarActionPerformed
-        JFileChooser fileChooser = new JFileChooser();  
-        int result = fileChooser.showOpenDialog(null); 
-        if (result == JFileChooser.CANCEL_OPTION) {
-        } else {
-            String file = fileChooser.getSelectedFile().getPath();
-            txt_diretorio.setText(file);
-        }
-    }//GEN-LAST:event_btn_buscarActionPerformed
-
     /**
      * @param args the command line arguments
      */
@@ -564,13 +449,10 @@ public class Configuração extends javax.swing.JFrame {
         });
     }
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JPanel aba_conexão;
     private javax.swing.JPanel aba_licença;
     private javax.swing.JPanel aba_parametros;
     private javax.swing.JPanel aba_permissão;
-    private javax.swing.JToggleButton btn_buscar;
     private javax.swing.JButton btn_cancelar;
-    private javax.swing.JButton btn_cancelar1;
     private javax.swing.JButton btn_salvar;
     private javax.swing.JTabbedPane fundo_abas;
     private javax.swing.JButton jButton1;
@@ -580,17 +462,11 @@ public class Configuração extends javax.swing.JFrame {
     private javax.swing.JCheckBox jCheckBox4;
     private javax.swing.JCheckBox jCheckBox5;
     private javax.swing.JCheckBox jCheckBox6;
-    private javax.swing.JComboBox jComboBox1;
     private javax.swing.JFormattedTextField jFormattedTextField1;
-    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel13;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
@@ -602,19 +478,14 @@ public class Configuração extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JTable jTable1;
     private javax.swing.JTextArea jTextArea1;
-    private javax.swing.JTextField jTextField1;
     private javax.swing.JTextField jTextField2;
     private javax.swing.JTextField jTextField3;
     private javax.swing.JTextField jTextField4;
     private javax.swing.JTextField jTextField5;
     private javax.swing.JTextField jTextField6;
     private javax.swing.JTextField jTextField7;
-    private javax.swing.JLabel lb_msg_conexão;
     private javax.swing.JPanel pnl_abas;
     private javax.swing.JPanel pnl_botoes;
     private javax.swing.JPanel pnl_fundo;
-    private javax.swing.JTextField txt_diretorio;
-    private javax.swing.JTextField txt_diretorio1;
-    private javax.swing.JTextField txt_diretorio2;
     // End of variables declaration//GEN-END:variables
 }

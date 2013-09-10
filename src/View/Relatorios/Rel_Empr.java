@@ -2,18 +2,18 @@
  * To change this template, choose Tools | Templates
  * and open the template in the editor.
  */
-package View;
+package View.Relatorios;
 
 /**
  *
  * @author Tadeu
  */
-public class Rel_Fluxo_trans extends javax.swing.JFrame {
+public class Rel_Empr extends javax.swing.JFrame {
 
     /**
-     * Creates new form Rel_Fluxo_trans
+     * Creates new form Rel_Empr
      */
-    public Rel_Fluxo_trans() {
+    public Rel_Empr() {
         initComponents();
     }
 
@@ -40,7 +40,8 @@ public class Rel_Fluxo_trans extends javax.swing.JFrame {
         jButton2 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
-        setTitle("Relatório de Clientes Cadastrados");
+        setTitle("Relatorio de Emprestimo");
+        setResizable(false);
 
         jPanel2.setBorder(javax.swing.BorderFactory.createEtchedBorder());
 
@@ -48,7 +49,7 @@ public class Rel_Fluxo_trans extends javax.swing.JFrame {
 
         jLabel2.setText("Data Final:");
 
-        jLabel3.setText("Transportador:");
+        jLabel3.setText("Cliente:");
 
         jTextField2.setEditable(false);
 
@@ -71,8 +72,9 @@ public class Rel_Fluxo_trans extends javax.swing.JFrame {
                         .addComponent(jLabel2)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(jDateChooser2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addContainerGap(229, Short.MAX_VALUE))
-                    .addComponent(jTextField2)))
+                        .addGap(0, 236, Short.MAX_VALUE))
+                    .addComponent(jTextField2))
+                .addContainerGap())
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -103,7 +105,7 @@ public class Rel_Fluxo_trans extends javax.swing.JFrame {
         jPanel3Layout.setHorizontalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
-                .addContainerGap(356, Short.MAX_VALUE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -172,20 +174,20 @@ public class Rel_Fluxo_trans extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(Rel_Fluxo_trans.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Rel_Empr.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(Rel_Fluxo_trans.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Rel_Empr.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(Rel_Fluxo_trans.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Rel_Empr.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(Rel_Fluxo_trans.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Rel_Empr.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new Rel_Fluxo_trans().setVisible(true);
+                new Rel_Empr().setVisible(true);
             }
         });
     }
