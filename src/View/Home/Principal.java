@@ -47,10 +47,13 @@ public class Principal extends javax.swing.JFrame {
 
         fundo_atalhos = new javax.swing.JPanel();
         atalho_clientes = new javax.swing.JPanel();
+        jLabel8 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
         atalho_locacao = new javax.swing.JPanel();
+        jLabel9 = new javax.swing.JLabel();
         atalho_rel_empr = new javax.swing.JPanel();
+        jLabel10 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
         pnl_fundo = new javax.swing.JPanel();
         pnl_login = new javax.swing.JPanel();
@@ -99,15 +102,17 @@ public class Principal extends javax.swing.JFrame {
             }
         });
 
+        jLabel8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Img/client.jpg"))); // NOI18N
+
         javax.swing.GroupLayout atalho_clientesLayout = new javax.swing.GroupLayout(atalho_clientes);
         atalho_clientes.setLayout(atalho_clientesLayout);
         atalho_clientesLayout.setHorizontalGroup(
             atalho_clientesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 0, Short.MAX_VALUE)
+            .addComponent(jLabel8, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         atalho_clientesLayout.setVerticalGroup(
             atalho_clientesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 0, Short.MAX_VALUE)
+            .addComponent(jLabel8, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         jLabel4.setFont(new java.awt.Font("Arial", 0, 10)); // NOI18N
@@ -125,15 +130,17 @@ public class Principal extends javax.swing.JFrame {
             }
         });
 
+        jLabel9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Img/locacao.jpg"))); // NOI18N
+
         javax.swing.GroupLayout atalho_locacaoLayout = new javax.swing.GroupLayout(atalho_locacao);
         atalho_locacao.setLayout(atalho_locacaoLayout);
         atalho_locacaoLayout.setHorizontalGroup(
             atalho_locacaoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 0, Short.MAX_VALUE)
+            .addComponent(jLabel9, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         atalho_locacaoLayout.setVerticalGroup(
             atalho_locacaoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 0, Short.MAX_VALUE)
+            .addComponent(jLabel9, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         atalho_rel_empr.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
@@ -143,15 +150,21 @@ public class Principal extends javax.swing.JFrame {
             }
         });
 
+        jLabel10.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Img/RelEmprestimo.jpg"))); // NOI18N
+
         javax.swing.GroupLayout atalho_rel_emprLayout = new javax.swing.GroupLayout(atalho_rel_empr);
         atalho_rel_empr.setLayout(atalho_rel_emprLayout);
         atalho_rel_emprLayout.setHorizontalGroup(
             atalho_rel_emprLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 0, Short.MAX_VALUE)
+            .addGap(0, 96, Short.MAX_VALUE)
+            .addGroup(atalho_rel_emprLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addComponent(jLabel10, javax.swing.GroupLayout.PREFERRED_SIZE, 92, Short.MAX_VALUE))
         );
         atalho_rel_emprLayout.setVerticalGroup(
             atalho_rel_emprLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 66, Short.MAX_VALUE)
+            .addGap(0, 0, Short.MAX_VALUE)
+            .addGroup(atalho_rel_emprLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addComponent(jLabel10, javax.swing.GroupLayout.PREFERRED_SIZE, 66, Short.MAX_VALUE))
         );
 
         jLabel6.setFont(new java.awt.Font("Arial", 0, 10)); // NOI18N
@@ -165,8 +178,8 @@ public class Principal extends javax.swing.JFrame {
             .addGroup(fundo_atalhosLayout.createSequentialGroup()
                 .addGap(18, 18, 18)
                 .addGroup(fundo_atalhosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(atalho_clientes, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jLabel4, javax.swing.GroupLayout.DEFAULT_SIZE, 96, Short.MAX_VALUE))
+                    .addComponent(jLabel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(atalho_clientes, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(fundo_atalhosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(atalho_locacao, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -175,7 +188,7 @@ public class Principal extends javax.swing.JFrame {
                 .addGroup(fundo_atalhosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(atalho_rel_empr, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 96, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(626, Short.MAX_VALUE))
         );
         fundo_atalhosLayout.setVerticalGroup(
             fundo_atalhosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -188,8 +201,8 @@ public class Principal extends javax.swing.JFrame {
                         .addComponent(jLabel6))
                     .addGroup(fundo_atalhosLayout.createSequentialGroup()
                         .addGroup(fundo_atalhosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(atalho_clientes, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(atalho_locacao, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                            .addComponent(atalho_locacao, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(atalho_clientes, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(fundo_atalhosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel5)
@@ -320,6 +333,7 @@ public class Principal extends javax.swing.JFrame {
         menuCadastro.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
 
         mi_produto.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_P, java.awt.event.InputEvent.ALT_MASK));
+        mi_produto.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Img/produto.png"))); // NOI18N
         mi_produto.setText("Produto");
         mi_produto.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -329,6 +343,7 @@ public class Principal extends javax.swing.JFrame {
         menuCadastro.add(mi_produto);
 
         mi_cliente.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_C, java.awt.event.InputEvent.ALT_MASK));
+        mi_cliente.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Img/cliente.jpg"))); // NOI18N
         mi_cliente.setText("Cliente");
         mi_cliente.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -338,6 +353,7 @@ public class Principal extends javax.swing.JFrame {
         menuCadastro.add(mi_cliente);
 
         mi_transportador.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_T, java.awt.event.InputEvent.ALT_MASK));
+        mi_transportador.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Img/motorista.jpg"))); // NOI18N
         mi_transportador.setText("Transportador");
         mi_transportador.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -347,6 +363,7 @@ public class Principal extends javax.swing.JFrame {
         menuCadastro.add(mi_transportador);
 
         mi_veiculo.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_V, java.awt.event.InputEvent.ALT_MASK));
+        mi_veiculo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Img/Veiculo.png"))); // NOI18N
         mi_veiculo.setText("Veículo");
         mi_veiculo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -356,6 +373,7 @@ public class Principal extends javax.swing.JFrame {
         menuCadastro.add(mi_veiculo);
 
         mi_usuario.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_U, java.awt.event.InputEvent.ALT_MASK));
+        mi_usuario.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Img/user.jpg"))); // NOI18N
         mi_usuario.setText("Usuario");
         mi_usuario.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -569,12 +587,15 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JButton btn_sair;
     private javax.swing.JPanel fundo_atalhos;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel8;
+    private javax.swing.JLabel jLabel9;
     private javax.swing.JMenuBar mb_menus;
     private javax.swing.JMenu menuCadastro;
     private javax.swing.JMenu mi_ajuda;
