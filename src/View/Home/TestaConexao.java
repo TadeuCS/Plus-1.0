@@ -27,6 +27,7 @@ public class TestaConexao extends javax.swing.JFrame {
     static Statement st;
     static Connection con;
     PrintWriter pw;
+
     public TestaConexao() {
         initComponents();
         try {
@@ -124,18 +125,14 @@ public class TestaConexao extends javax.swing.JFrame {
                 pw.println(txt_diretorio.getText());
             }
             JOptionPane.showMessageDialog(null, "Configurações salvas com Sucesso!");
+            Principal p = new Principal();
+            p.setVisible(true);
+            setVisible(false);
         } catch (Exception e) {
             JOptionPane.showMessageDialog(null, "erro ao gravar arquivo! " + e.getMessage());
         }
-        pw.close();
-        
-        Principal p=new Principal();
-        p.setVisible(true);
-        setVisible(false);
-        
 
-//Mesma coisa, salva a String s no arquivo.   
-//Mas lembre, se você for salvar várias linhas, é bom adcionar bw.newLine() depois de salvar cada linha  
+        pw.close();
     }
 
     public void leArquivo() throws IOException {
@@ -150,10 +147,10 @@ public class TestaConexao extends javax.swing.JFrame {
 
         String linha = br.readLine();
         txt_ip.setText(linha);
-        if(txt_ip.getText().compareTo("localhost")==0){
+        if (txt_ip.getText().compareTo("localhost") == 0) {
             cbx_tipo.setSelectedIndex(0);
             txt_ip.setText("");
-        }else{
+        } else {
             cbx_tipo.setSelectedIndex(1);
         }
         String linha2 = br.readLine();
