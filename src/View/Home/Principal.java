@@ -220,9 +220,14 @@ public class Principal extends javax.swing.JFrame {
         jLabel2.setFont(new java.awt.Font("Courier New", 1, 18)); // NOI18N
         jLabel2.setText("Senha:");
 
-        btn_entrar.setText("Entrar");
+        btn_entrar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Img/login.jpg"))); // NOI18N
+        btn_entrar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_entrarActionPerformed(evt);
+            }
+        });
 
-        btn_sair.setText("Sair");
+        btn_sair.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Img/logout.jpg"))); // NOI18N
         btn_sair.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btn_sairActionPerformed(evt);
@@ -240,10 +245,10 @@ public class Principal extends javax.swing.JFrame {
                 .addContainerGap(20, Short.MAX_VALUE)
                 .addGroup(pnl_loginLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(pnl_loginLayout.createSequentialGroup()
-                        .addComponent(btn_sair, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(22, 22, 22)
-                        .addComponent(btn_entrar, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(10, 10, 10))
+                        .addComponent(btn_sair, javax.swing.GroupLayout.PREFERRED_SIZE, 92, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(btn_entrar, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(19, 19, 19))
                     .addGroup(pnl_loginLayout.createSequentialGroup()
                         .addGroup(pnl_loginLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel2, javax.swing.GroupLayout.Alignment.TRAILING)
@@ -275,8 +280,8 @@ public class Principal extends javax.swing.JFrame {
                     .addComponent(txt_senha))
                 .addGap(42, 42, 42)
                 .addGroup(pnl_loginLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btn_entrar)
-                    .addComponent(btn_sair))
+                    .addComponent(btn_entrar, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btn_sair, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(28, 28, 28))
         );
 
@@ -389,6 +394,7 @@ public class Principal extends javax.swing.JFrame {
         mi_movimentacao.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
 
         mi_locacao.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_L, java.awt.event.InputEvent.ALT_MASK));
+        mi_locacao.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Img/locacao2.jpg"))); // NOI18N
         mi_locacao.setText("Locação");
         mi_locacao.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -404,6 +410,7 @@ public class Principal extends javax.swing.JFrame {
         mi_relatorios.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
 
         mi_relClieCad.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_C, java.awt.event.InputEvent.ALT_MASK | java.awt.event.InputEvent.CTRL_MASK));
+        mi_relClieCad.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Img/cliente.jpg"))); // NOI18N
         mi_relClieCad.setText("Relatório de Clientes Cadastrados");
         mi_relClieCad.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -413,6 +420,7 @@ public class Principal extends javax.swing.JFrame {
         mi_relatorios.add(mi_relClieCad);
 
         mi_relEmpr.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_E, java.awt.event.InputEvent.ALT_MASK | java.awt.event.InputEvent.CTRL_MASK));
+        mi_relEmpr.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Img/RelEmprest.jpg"))); // NOI18N
         mi_relEmpr.setText("Relatório de Empréstimos");
         mi_relEmpr.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -422,6 +430,7 @@ public class Principal extends javax.swing.JFrame {
         mi_relatorios.add(mi_relEmpr);
 
         mi_relFluxTrans.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_F, java.awt.event.InputEvent.ALT_MASK | java.awt.event.InputEvent.CTRL_MASK));
+        mi_relFluxTrans.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Img/Veiculo.png"))); // NOI18N
         mi_relFluxTrans.setText("Relatório de Fluxo de Transportes");
         mi_relFluxTrans.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -437,6 +446,7 @@ public class Principal extends javax.swing.JFrame {
         mi_ajuda.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
 
         mi_help.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_F1, 0));
+        mi_help.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Img/lupa.png"))); // NOI18N
         mi_help.setText("Help");
         mi_help.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -460,7 +470,7 @@ public class Principal extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addComponent(fundo_atalhos, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 7, Short.MAX_VALUE)
                 .addComponent(pnl_fundo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
@@ -542,6 +552,10 @@ public class Principal extends javax.swing.JFrame {
     private void formWindowClosed(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowClosed
         conexao.Desconecta();
     }//GEN-LAST:event_formWindowClosed
+
+    private void btn_entrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_entrarActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btn_entrarActionPerformed
 
     /**
      * @param args the command line arguments
