@@ -23,7 +23,15 @@ import javax.swing.JOptionPane;
  */
 public class TestaConexao extends javax.swing.JFrame {
 
-    static String diretorio = "";
+    String diretorio = "";
+
+    public String getDiretorio() {
+        return diretorio;
+    }
+
+    public void setDiretorio(String diretorio) {
+        this.diretorio = diretorio;
+    }
     static Statement st;
     static Connection con;
     PrintWriter pw;
@@ -32,6 +40,7 @@ public class TestaConexao extends javax.swing.JFrame {
         initComponents();
         try {
             leArquivo();
+            btn_gravar.setEnabled(false);
         } catch (IOException ex) {
             Logger.getLogger(TestaConexao.class.getName()).log(Level.SEVERE, null, ex);
         }
@@ -86,12 +95,14 @@ public class TestaConexao extends javax.swing.JFrame {
                                     txt_password.getText());
                             st = con.createStatement();
                             status.setText("Conexão Bem Sucedida!");
+                            btn_gravar.setEnabled(true);
                         } catch (ClassNotFoundException ex)//caso o driver não seja localizado  
                         {
                             JOptionPane.showMessageDialog(null, "Driver não encontrado!");
                         } catch (SQLException ex)//caso a conexão não possa se realizada  
                         {
                             status.setText("Sem Conexão!");
+                            btn_gravar.setEnabled(false);
                             JOptionPane.showMessageDialog(null, ex.getMessage());
                         }
                     }
@@ -125,8 +136,6 @@ public class TestaConexao extends javax.swing.JFrame {
                 pw.println(txt_diretorio.getText());
             }
             JOptionPane.showMessageDialog(null, "Configurações salvas com Sucesso!");
-            Principal p = new Principal();
-            p.setVisible(true);
             setVisible(false);
         } catch (Exception e) {
             JOptionPane.showMessageDialog(null, "erro ao gravar arquivo! " + e.getMessage());

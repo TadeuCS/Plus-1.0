@@ -20,15 +20,20 @@ import javax.swing.JFrame;
  * @author Tadeu
  */
 public class Principal extends javax.swing.JFrame {
-    Conexao conexao= new Conexao();
+
+    Conexao conexao = new Conexao();
+    TestaConexao testaConexao = new TestaConexao();
 
     public Principal() {
-        
-        initComponents();
-        setExtendedState(JFrame.MAXIMIZED_BOTH);
-        conexao.Conecta();
-    }
 
+        initComponents();
+        conexao.Conecta();
+        antesdeLogar();
+        setExtendedState(JFrame.MAXIMIZED_BOTH);
+    }
+    public void antesdeLogar(){
+        menuCadastro.setEnabled(false);
+    }
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -52,7 +57,7 @@ public class Principal extends javax.swing.JFrame {
         btn_sair = new javax.swing.JButton();
         jLabel3 = new javax.swing.JLabel();
         txt_senha = new javax.swing.JPasswordField();
-        btn_config = new javax.swing.JLabel();
+        btn_conexao = new javax.swing.JLabel();
         pnl_barraStatus = new javax.swing.JPanel();
         jLabel7 = new javax.swing.JLabel();
         txt_userLogado = new javax.swing.JTextField();
@@ -225,6 +230,12 @@ public class Principal extends javax.swing.JFrame {
         jLabel3.setFont(new java.awt.Font("Times New Roman", 0, 24)); // NOI18N
         jLabel3.setText("LOGIN");
 
+        btn_conexao.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btn_conexaoMouseClicked(evt);
+            }
+        });
+
         javax.swing.GroupLayout pnl_loginLayout = new javax.swing.GroupLayout(pnl_login);
         pnl_login.setLayout(pnl_loginLayout);
         pnl_loginLayout.setHorizontalGroup(
@@ -236,20 +247,23 @@ public class Principal extends javax.swing.JFrame {
                         .addComponent(btn_sair, javax.swing.GroupLayout.PREFERRED_SIZE, 92, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
                         .addComponent(btn_entrar, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(19, 19, 19))
+                        .addGap(29, 29, 29))
                     .addGroup(pnl_loginLayout.createSequentialGroup()
                         .addGroup(pnl_loginLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel2, javax.swing.GroupLayout.Alignment.TRAILING)
                             .addComponent(jLabel1, javax.swing.GroupLayout.Alignment.TRAILING))
                         .addGap(18, 18, 18)
                         .addGroup(pnl_loginLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(txt_senha, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(txt_usuario, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGroup(pnl_loginLayout.createSequentialGroup()
                                 .addComponent(jLabel3)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(btn_config, javax.swing.GroupLayout.PREFERRED_SIZE, 19, javax.swing.GroupLayout.PREFERRED_SIZE)))))
-                .addContainerGap())
+                                .addComponent(btn_conexao, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addContainerGap())
+                            .addGroup(pnl_loginLayout.createSequentialGroup()
+                                .addGroup(pnl_loginLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(txt_senha, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(txt_usuario, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGap(5, 5, 5))))))
         );
         pnl_loginLayout.setVerticalGroup(
             pnl_loginLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -257,7 +271,7 @@ public class Principal extends javax.swing.JFrame {
                 .addContainerGap()
                 .addGroup(pnl_loginLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel3)
-                    .addComponent(btn_config, javax.swing.GroupLayout.PREFERRED_SIZE, 19, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(btn_conexao, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 20, Short.MAX_VALUE)
                 .addGroup(pnl_loginLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(jLabel1)
@@ -305,7 +319,7 @@ public class Principal extends javax.swing.JFrame {
         pnl_fundoLayout.setHorizontalGroup(
             pnl_fundoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnl_fundoLayout.createSequentialGroup()
-                .addContainerGap(670, Short.MAX_VALUE)
+                .addContainerGap(675, Short.MAX_VALUE)
                 .addComponent(pnl_login, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
             .addComponent(pnl_barraStatus, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -541,6 +555,10 @@ public class Principal extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_btn_entrarActionPerformed
 
+    private void btn_conexaoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_conexaoMouseClicked
+        testaConexao.setVisible(true);
+    }//GEN-LAST:event_btn_conexaoMouseClicked
+
     /**
      * @param args the command line arguments
      */
@@ -571,8 +589,8 @@ public class Principal extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                Principal p= new Principal();
-                p.setVisible(true);
+                Principal principal = new Principal();
+                principal.setVisible(true);
             }
         });
     }
@@ -580,7 +598,7 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JPanel atalho_clientes;
     private javax.swing.JPanel atalho_locacao;
     private javax.swing.JPanel atalho_rel_empr;
-    private javax.swing.JLabel btn_config;
+    private javax.swing.JLabel btn_conexao;
     private javax.swing.JButton btn_entrar;
     private javax.swing.JButton btn_sair;
     private javax.swing.JPanel fundo_atalhos;
