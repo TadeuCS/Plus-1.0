@@ -5,6 +5,7 @@
 package View.Cadastros;
 
 import Ctrl.Conexao;
+import Model.Usuario;
 import java.awt.event.KeyEvent;
 import java.sql.Connection;
 import java.sql.ResultSet;
@@ -22,8 +23,6 @@ public class Cad_Cliente extends javax.swing.JFrame {
     static Statement st;
     public Cad_Cliente() {
         initComponents();
-        con=c.getCon();
-        st=c.getSt();
     }
     public void Enter(KeyEvent e) {
         if (e.getKeyCode() == KeyEvent.VK_ENTER) {
@@ -63,6 +62,7 @@ public class Cad_Cliente extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(null, "erro: "+e.getMessage());
         }
     }
+        
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -368,6 +368,11 @@ public class Cad_Cliente extends javax.swing.JFrame {
         pnl_rodape.setBorder(javax.swing.BorderFactory.createEtchedBorder());
 
         btn_inclusao.setText("Inclusão");
+        btn_inclusao.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_inclusaoActionPerformed(evt);
+            }
+        });
 
         btn_alteracao.setText("Alteração");
 
@@ -577,6 +582,10 @@ public class Cad_Cliente extends javax.swing.JFrame {
     private void txt_cep_entKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txt_cep_entKeyPressed
         Enter2(evt);
     }//GEN-LAST:event_txt_cep_entKeyPressed
+
+    private void btn_inclusaoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_inclusaoActionPerformed
+        
+    }//GEN-LAST:event_btn_inclusaoActionPerformed
 
     /**
      * @param args the command line arguments

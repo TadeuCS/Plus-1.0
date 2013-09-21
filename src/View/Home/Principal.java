@@ -13,13 +13,7 @@ import View.Cadastros.Cad_Usuario;
 import View.Cadastros.Cad_Transportador;
 import Ctrl.Conexao;
 import View.Cadastros.Cad_Veiculo;
-import java.sql.Connection;
-import java.sql.SQLException;
-import java.sql.Statement;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import javax.swing.JFrame;
-import javax.swing.JOptionPane;
 
 /**
  *
@@ -27,18 +21,12 @@ import javax.swing.JOptionPane;
  */
 public class Principal extends javax.swing.JFrame {
     Conexao conexao= new Conexao();
-    static Connection con;
-    static Statement st;
+
     public Principal() {
         
         initComponents();
         setExtendedState(JFrame.MAXIMIZED_BOTH);
-        try{
-        con=conexao.getCon();
-        st=conexao.getSt();
-        }catch(Exception e){
-            System.out.println("erro: "+e);
-        }
+        conexao.Conecta();
     }
 
     @SuppressWarnings("unchecked")
@@ -488,12 +476,8 @@ public class Principal extends javax.swing.JFrame {
     }//GEN-LAST:event_mi_relEmprActionPerformed
 
     private void btn_sairActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_sairActionPerformed
-        try {
         conexao.Desconecta();
         setVisible(false);
-        } catch (Exception e) {
-            JOptionPane.showMessageDialog(null, e.getMessage());
-        }
     }//GEN-LAST:event_btn_sairActionPerformed
 
     private void atalho_clientesMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_atalho_clientesMouseClicked
@@ -587,8 +571,8 @@ public class Principal extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                Conexao c= new Conexao();
-                c.Conecta();
+                Principal p= new Principal();
+                p.setVisible(true);
             }
         });
     }

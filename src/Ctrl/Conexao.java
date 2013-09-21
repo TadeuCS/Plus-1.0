@@ -14,8 +14,14 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.util.HashMap;
+import java.util.Map;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.persistence.EntityManager;
+import javax.persistence.EntityManagerFactory;
+import javax.persistence.Persistence;
+import javax.persistence.Query;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 
@@ -24,13 +30,11 @@ import javax.swing.JOptionPane;
  * @author Tadeu
  */
 public class Conexao {
-
-    public static Connection con;
-    public static Statement st;
+    
     static String ip = "";
     static String diretorio = "";
-    static String senha = "";
-    static String usuario = "";
+    static EntityManagerFactory emf;
+    static EntityManager em;
 
     public void leArquivo() throws Exception {
         File file = new File("C:/Plus 1.0/src/Ctrl/config.txt");
@@ -45,50 +49,39 @@ public class Conexao {
         String linha = br.readLine();
         ip = linha;
         String linha2 = br.readLine();
-        diretorio = ip+":3050/"+linha2;
-        usuario = "SYSDBA";
-        senha = "masterkey";
+        diretorio = "jdbc:firebirdsql://"+ip+":3050/"+linha2;
+        System.out.println(diretorio);
     }
-
-    public void Conecta() {
-        try {
+    
+    public void Conecta(){
+        try{
             leArquivo();
-            Class.forName("org.firebirdsql.jdbc.FBDriver");
-            con = DriverManager.getConnection("jdbc:firebirdsql://" + diretorio, usuario, senha);
-            st = con.createStatement();
-            Principal p =new Principal();
-            p.setVisible(true);
-        } catch (Exception e) {
-            JOptionPane.showMessageDialog(null, "Conexão Não Estabelecida!");
-            Principal p =new Principal();
-            p.setVisible(false);
-            TestaConexao conecta = new TestaConexao();
-            conecta.setVisible(true);
+         emf= Persistence.createEntityManagerFactory("Plus_PU", getConf());
+         em=emf.createEntityManager();
+        Query query=em.createNativeQuery("SELECT C.DESCRICAO FROM PRODUTO C where c.CODPROD=1");
+        System.out.println(query.getResultList()+"\n");
+        }catch(Exception e){
+            System.out.println(e.getMessage());
         }
+    }
+    
+    public static Map getConf() {
+        Map prop = new HashMap();
+        try{
+        prop.put("javax.persistence.jdbc.url", diretorio);
+            System.out.println("deu certo");
+        }catch(Exception e){
+            System.out.println("deu errado"+e.getMessage());
+        }
+        return prop;
     }
 
     public void Desconecta() {
         try {
-            con.close();
-        } catch (SQLException ex) {
+            em.close();
+        } catch (Exception ex) {
             JOptionPane.showMessageDialog(null, "erro: "+ex);
         }
-    }
-
-    public static Connection getCon() {
-        return con;
-    }
-
-    public static void setCon(Connection con) {
-        Conexao.con = con;
-    }
-
-    public static Statement getSt() {
-        return st;
-    }
-
-    public static void setSt(Statement st) {
-        Conexao.st = st;
     }
 
     
