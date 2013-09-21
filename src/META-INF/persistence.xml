@@ -3,7 +3,6 @@
   <persistence-unit name="Plus_PU" transaction-type="RESOURCE_LOCAL">
     <provider>org.eclipse.persistence.jpa.PersistenceProvider</provider>
     <class>Model.CEP</class>
-    <class>Model.Cliente</class>
     <class>Model.End_Cobranca</class>
     <class>Model.End_Entrega</class>
     <class>Model.Item_Locado</class>
@@ -13,12 +12,13 @@
     <class>Model.Produto</class>
     <class>Model.Transportador</class>
     <class>Model.Usuario</class>
+    <class>Model.Cliente</class>
     <properties>
       <property name="javax.persistence.jdbc.url" value="jdbc:firebirdsql://localhost:3050/C:/Plus 1.0/src/BD/PLUSDB.FB"/>
       <property name="javax.persistence.jdbc.password" value="masterkey"/>
       <property name="javax.persistence.jdbc.driver" value="org.firebirdsql.jdbc.FBDriver"/>
       <property name="javax.persistence.jdbc.user" value="SYSDBA"/>
-      <property name="eclipselink.ddl-generation" value="create-tables"/>
+      <property name="eclipselink.ddl-generation" value="drop-and-create-tables"/>
     </properties>
   </persistence-unit>
 </persistence>

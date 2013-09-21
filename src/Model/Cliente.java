@@ -36,7 +36,7 @@ public class Cliente implements Serializable{
     private End_Cobranca end_Cobranca;
     @OneToOne
     private End_Entrega end_Entrega;
-    
+
     public Long getId() {
         return id;
     }
@@ -53,14 +53,6 @@ public class Cliente implements Serializable{
         this.contato = contato;
     }
 
-    public String getTelefone() {
-        return telefone;
-    }
-
-    public void setTelefone(String telefone) {
-        this.telefone = telefone;
-    }
-
     public String getEmail() {
         return email;
     }
@@ -75,14 +67,6 @@ public class Cliente implements Serializable{
 
     public void setStatus(String status) {
         this.status = status;
-    }
-
-    public String getTipo_Pessoa() {
-        return tipo_Pessoa;
-    }
-
-    public void setTipo_Pessoa(String tipo_Pessoa) {
-        this.tipo_Pessoa = tipo_Pessoa;
     }
 
     public Pessoa_F getPessoa_F() {
@@ -116,6 +100,23 @@ public class Cliente implements Serializable{
     public void setEnd_Entrega(End_Entrega end_Entrega) {
         this.end_Entrega = end_Entrega;
     }
+
+    public String getTelefone() {
+        return telefone;
+    }
+
+    public void setTelefone(String telefone) {
+        this.telefone = telefone;
+    }
+
+    public String getTipo_Pessoa() {
+        return tipo_Pessoa;
+    }
+
+    public void setTipo_Pessoa(String tipo_Pessoa) {
+        this.tipo_Pessoa = tipo_Pessoa;
+    }
+    
 
     @Override
     public int hashCode() {
