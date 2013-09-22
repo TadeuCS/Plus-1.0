@@ -2,7 +2,6 @@
 <persistence version="2.1" xmlns="http://xmlns.jcp.org/xml/ns/persistence" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence http://xmlns.jcp.org/xml/ns/persistence/persistence_2_1.xsd">
   <persistence-unit name="Plus_PU" transaction-type="RESOURCE_LOCAL">
     <provider>org.eclipse.persistence.jpa.PersistenceProvider</provider>
-    <class>Model.CEP</class>
     <class>Model.End_Cobranca</class>
     <class>Model.End_Entrega</class>
     <class>Model.Item_Locado</class>
@@ -13,6 +12,7 @@
     <class>Model.Transportador</class>
     <class>Model.Usuario</class>
     <class>Model.Cliente</class>
+    <class>Model.CEP_Cob</class>
     <properties>
       <property name="javax.persistence.jdbc.url" value="jdbc:firebirdsql://localhost:3050/C:/Plus 1.0/src/BD/PLUSDB.FB"/>
       <property name="javax.persistence.jdbc.password" value="masterkey"/>

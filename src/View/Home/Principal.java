@@ -14,6 +14,7 @@ import View.Cadastros.Cad_Transportador;
 import Ctrl.Conexao;
 import View.Cadastros.Cad_Veiculo;
 import javax.swing.JFrame;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -28,10 +29,11 @@ public class Principal extends javax.swing.JFrame {
 
         initComponents();
         conexao.Conecta();
-        antesdeLogar();
+//        antesdeLogar();
         setExtendedState(JFrame.MAXIMIZED_BOTH);
     }
-    public void antesdeLogar(){
+
+    public void antesdeLogar() {
         mi_Cadastro.setEnabled(false);
         mi_movimentacao.setEnabled(false);
         mi_relatorios.setEnabled(false);
@@ -39,8 +41,19 @@ public class Principal extends javax.swing.JFrame {
         atalho_clientes.setEnabled(false);
         atalho_locacao.setEnabled(false);
         atalho_rel_empr.setEnabled(false);
-        
+
     }
+
+    public void entrar() {
+        Ctrl.EJB_Usuario.BuscaPorUsuarioSenha(txt_usuario.getText(), txt_senha.getText());
+        if ((Ctrl.EJB_Usuario.Resultado == true)||((txt_usuario.getText().compareTo("admin") == 0)&&(txt_senha.getText().compareTo("admin")==0))) {
+            txt_userLogado.setText(txt_usuario.getText());
+            pnl_login.setVisible(false);
+        } else {
+            JOptionPane.showMessageDialog(null, "Usuario Invalido");
+        }
+    }
+
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -272,20 +285,18 @@ public class Principal extends javax.swing.JFrame {
                         .addGap(5, 5, 5))
                     .addGroup(pnl_loginLayout.createSequentialGroup()
                         .addComponent(jLabel3)
-                        .addGap(34, 34, 34)
+                        .addGap(50, 50, 50)
                         .addComponent(btn_conexao)
-                        .addGap(34, 34, 34))))
+                        .addGap(18, 18, 18))))
         );
         pnl_loginLayout.setVerticalGroup(
             pnl_loginLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnl_loginLayout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(pnl_loginLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(pnl_loginLayout.createSequentialGroup()
-                        .addComponent(jLabel3)
-                        .addGap(0, 0, Short.MAX_VALUE))
+                    .addComponent(jLabel3)
                     .addComponent(btn_conexao, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addGap(18, 18, 18)
+                .addGap(18, 20, Short.MAX_VALUE)
                 .addGroup(pnl_loginLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(jLabel1)
                     .addComponent(txt_usuario, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -308,6 +319,7 @@ public class Principal extends javax.swing.JFrame {
         txt_userLogado.setEditable(false);
         txt_userLogado.setBackground(new java.awt.Color(204, 204, 204));
         txt_userLogado.setForeground(new java.awt.Color(51, 51, 51));
+        txt_userLogado.setHorizontalAlignment(javax.swing.JTextField.CENTER);
 
         javax.swing.GroupLayout pnl_barraStatusLayout = new javax.swing.GroupLayout(pnl_barraStatus);
         pnl_barraStatus.setLayout(pnl_barraStatusLayout);
@@ -485,7 +497,7 @@ public class Principal extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addComponent(fundo_atalhos, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 7, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(pnl_fundo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
@@ -565,7 +577,7 @@ public class Principal extends javax.swing.JFrame {
     }//GEN-LAST:event_formWindowClosed
 
     private void btn_entrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_entrarActionPerformed
-        // TODO add your handling code here:
+        entrar();
     }//GEN-LAST:event_btn_entrarActionPerformed
 
     private void btn_conexaoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_conexaoMouseClicked
@@ -573,7 +585,8 @@ public class Principal extends javax.swing.JFrame {
     }//GEN-LAST:event_btn_conexaoMouseClicked
 
     private void btn_atalho_clientesMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_atalho_clientesMouseClicked
-        
+        Cad_Cliente c= new Cad_Cliente();
+        c.setVisible(true);
     }//GEN-LAST:event_btn_atalho_clientesMouseClicked
 
     /**

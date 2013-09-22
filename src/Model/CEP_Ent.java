@@ -14,9 +14,9 @@ import javax.persistence.Id;
  * @author Tadeu
  */
 @Entity
-public class CEP implements Serializable {
+public class CEP_Ent implements Serializable {
     @Id
-    private Long id;
+    private String id;
     private String rua;
     private String bairro;
     private String cidade;
@@ -45,11 +45,11 @@ public class CEP implements Serializable {
         this.cidade = cidade;
     }
     
-    public Long getId() {
+    public String getId() {
         return id;
     }
 
-    public void setId(Long id) {
+    public void setId(String id) {
         this.id = id;
     }
 
@@ -63,10 +63,10 @@ public class CEP implements Serializable {
     @Override
     public boolean equals(Object object) {
         // TODO: Warning - this method won't work in the case the id fields are not set
-        if (!(object instanceof CEP)) {
+        if (!(object instanceof CEP_Ent)) {
             return false;
         }
-        CEP other = (CEP) object;
+        CEP_Ent other = (CEP_Ent) object;
         if ((this.id == null && other.id != null) || (this.id != null && !this.id.equals(other.id))) {
             return false;
         }

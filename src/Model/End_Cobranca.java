@@ -24,7 +24,7 @@ public class End_Cobranca implements Serializable {
     private String complemento;
     private int numero;
     @OneToOne
-    private CEP cep;
+    private CEP_Cob cep;
 
     public String getComplemento() {
         return complemento;
@@ -42,13 +42,14 @@ public class End_Cobranca implements Serializable {
         this.numero = numero;
     }
 
-    public CEP getCep() {
+    public CEP_Cob getCep() {
         return cep;
     }
 
-    public void setCep(CEP cep) {
+    public void setCep(CEP_Cob cep) {
         this.cep = cep;
     }
+
     
     public Long getId() {
         return id;

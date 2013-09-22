@@ -5,6 +5,13 @@
 package View.Cadastros;
 
 import Ctrl.Conexao;
+import Model.CEP_Cob;
+import Model.CEP_Ent;
+import Model.Cliente;
+import Model.End_Cobranca;
+import Model.End_Entrega;
+import Model.Pessoa_F;
+import Model.Pessoa_J;
 import Model.Usuario;
 import java.awt.event.KeyEvent;
 import java.sql.Connection;
@@ -39,7 +46,6 @@ public class Cad_Cliente extends javax.swing.JFrame {
          st= con.createStatement();
         ResultSet rs = st.executeQuery("SELECT * FROM CEP WHERE CEP like '%" + cep + "%'");
         while (rs.next()) {
-            cbx_uf_cob.setSelectedItem(rs.getString("UF"));
             txt_cidade_cob.setText(rs.getString("CIDADE"));
             txt_bairro_cob.setText(rs.getString("BAIRRO"));
             txt_logradouro_cob.setText(rs.getString("LOGRADOURO"));
@@ -53,7 +59,6 @@ public class Cad_Cliente extends javax.swing.JFrame {
          st= con.createStatement();
         ResultSet rs = st.executeQuery("SELECT * FROM CEP WHERE CEP like '%" + cep + "%'");
         while (rs.next()) {
-            cbx_uf_ent.setSelectedItem(rs.getString("UF"));
             txt_cidade_ent.setText(rs.getString("CIDADE"));
             txt_bairro_ent.setText(rs.getString("BAIRRO"));
             txt_logradouro_ent.setText(rs.getString("LOGRADOURO"));
@@ -62,7 +67,53 @@ public class Cad_Cliente extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(null, "erro: "+e.getMessage());
         }
     }
+    public void salva(){
+        Cliente cliente= new Cliente();
+        Pessoa_F f= new Pessoa_F();
+        Pessoa_J j= new Pessoa_J();
+        End_Entrega e= new End_Entrega();
+        End_Cobranca c= new End_Cobranca();
+        CEP_Cob cep_c= new CEP_Cob();
+        CEP_Ent cep_e=new CEP_Ent();
+        if(cbx_tipo.getSelectedIndex()==0){
+            f.setNome(txt_nome.getText());
+            f.setCpf(txt_cpf.getText());
+            f.setRg(txt_rg.getText());
+            cliente.setPessoa_F(f);
+        }else{
+            j.setRazaoSocial(txt_nome.getText());
+            j.setCnpj(txt_cpf.getText());
+            j.setInscricao(txt_incricaoEstadual.getText());
+            j.setNomeFantasia(txt_nomeFantasia.getText());
+            cliente.setPessoa_J(j);
+        }
+        cliente.setContato(txt_contato.getText());
+        cliente.setEmail(txt_email.getText());
+        if (chk_status.getSelectedIcon()!=null) {
+            cliente.setStatus("BLOQUEADO");
+        }else{  
+            cliente.setStatus("DESBLOQUEADO");
+        }
+        cliente.setTelefone(txt_telefone.getText());
+        cep_c.setRua(txt_logradouro_cob.getText());
+        cep_c.setCidade(txt_cidade_cob.getText());
+        cep_c.setBairro(txt_bairro_cob.getText());
+        c.setCep(cep_c);
+        c.setNumero(Integer.parseInt(txt_numero_cob.getText()));
+        c.setComplemento(txt_complemento_cob.getText());
+
+        cep_e.setRua(txt_logradouro_ent.getText());
+        cep_e.setCidade(txt_cidade_ent.getText());
+        cep_e.setBairro(txt_bairro_ent.getText());
+        e.setCep(cep_e);
+        c.setNumero(Integer.parseInt(txt_numero_ent.getText()));
+        c.setComplemento(txt_complemento_ent.getText());
         
+        cliente.setEnd_Cobranca(c);
+        cliente.setEnd_Entrega(e);
+        
+        Ctrl.EJB_Cliente.salvar(cliente);
+    } 
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -77,7 +128,7 @@ public class Cad_Cliente extends javax.swing.JFrame {
         jLabel5 = new javax.swing.JLabel();
         txt_email = new javax.swing.JTextField();
         jLabel6 = new javax.swing.JLabel();
-        jComboBox1 = new javax.swing.JComboBox();
+        cbx_tipo = new javax.swing.JComboBox();
         jLabel7 = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
         txt_contato = new javax.swing.JTextField();
@@ -85,7 +136,7 @@ public class Cad_Cliente extends javax.swing.JFrame {
         txt_cpf = new javax.swing.JFormattedTextField();
         jLabel9 = new javax.swing.JLabel();
         txt_nomeFantasia = new javax.swing.JTextField();
-        jCheckBox1 = new javax.swing.JCheckBox();
+        chk_status = new javax.swing.JCheckBox();
         txt_incricaoEstadual = new javax.swing.JFormattedTextField();
         jLabel10 = new javax.swing.JLabel();
         txt_rg = new javax.swing.JFormattedTextField();
@@ -94,8 +145,6 @@ public class Cad_Cliente extends javax.swing.JFrame {
         jLabel3 = new javax.swing.JLabel();
         jLabel11 = new javax.swing.JLabel();
         txt_cidade_cob = new javax.swing.JTextField();
-        cbx_uf_cob = new javax.swing.JComboBox();
-        jLabel12 = new javax.swing.JLabel();
         jLabel14 = new javax.swing.JLabel();
         txt_bairro_cob = new javax.swing.JTextField();
         jLabel15 = new javax.swing.JLabel();
@@ -120,8 +169,6 @@ public class Cad_Cliente extends javax.swing.JFrame {
         jLabel18 = new javax.swing.JLabel();
         jLabel19 = new javax.swing.JLabel();
         txt_cidade_ent = new javax.swing.JTextField();
-        cbx_uf_ent = new javax.swing.JComboBox();
-        jLabel20 = new javax.swing.JLabel();
         jLabel21 = new javax.swing.JLabel();
         txt_bairro_ent = new javax.swing.JTextField();
         jLabel22 = new javax.swing.JLabel();
@@ -153,7 +200,7 @@ public class Cad_Cliente extends javax.swing.JFrame {
 
         jLabel6.setText("Tipo");
 
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Física", "Jurídica" }));
+        cbx_tipo.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Física", "Jurídica" }));
 
         jLabel7.setText("CPF:");
 
@@ -174,7 +221,7 @@ public class Cad_Cliente extends javax.swing.JFrame {
 
         jLabel9.setText("Nome Fantasia:");
 
-        jCheckBox1.setText("Bloqueado");
+        chk_status.setText("Bloqueado");
 
         jLabel10.setText("Inscrição Estadual:");
 
@@ -196,7 +243,7 @@ public class Cad_Cliente extends javax.swing.JFrame {
                     .addGroup(pnl_dadosPessoaisLayout.createSequentialGroup()
                         .addComponent(jLabel6)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(cbx_tipo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
                         .addComponent(jLabel7)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
@@ -223,7 +270,7 @@ public class Cad_Cliente extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(txt_nomeFantasia))
                     .addGroup(pnl_dadosPessoaisLayout.createSequentialGroup()
-                        .addComponent(jCheckBox1)
+                        .addComponent(chk_status)
                         .addGap(18, 18, 18)
                         .addComponent(jLabel8)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
@@ -245,28 +292,29 @@ public class Cad_Cliente extends javax.swing.JFrame {
                 .addGroup(pnl_dadosPessoaisLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(txt_nome)
                     .addComponent(txt_codigo)
-                    .addComponent(jLabel1)
-                    .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(pnl_dadosPessoaisLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(txt_nomeFantasia, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(pnl_dadosPessoaisLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(txt_contato, javax.swing.GroupLayout.DEFAULT_SIZE, 23, Short.MAX_VALUE)
-                    .addComponent(txt_email)
-                    .addComponent(jLabel5)
-                    .addGroup(pnl_dadosPessoaisLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                        .addComponent(jCheckBox1, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
-                        .addComponent(txt_telefone, javax.swing.GroupLayout.Alignment.LEADING)
-                        .addGroup(javax.swing.GroupLayout.Alignment.LEADING, pnl_dadosPessoaisLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel8)
-                            .addComponent(jLabel4))))
+                    .addComponent(jLabel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jLabel5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jLabel8, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(chk_status, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addGroup(pnl_dadosPessoaisLayout.createSequentialGroup()
+                        .addGroup(pnl_dadosPessoaisLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(txt_contato, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(txt_telefone, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(txt_email, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(0, 0, Short.MAX_VALUE)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(pnl_dadosPessoaisLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel7)
                     .addComponent(jLabel6)
-                    .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(cbx_tipo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(txt_cpf, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel10)
                     .addComponent(txt_incricaoEstadual, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -280,10 +328,6 @@ public class Cad_Cliente extends javax.swing.JFrame {
         jLabel3.setText("CEP:");
 
         jLabel11.setText("Cidade:");
-
-        cbx_uf_cob.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "MG" }));
-
-        jLabel12.setText("UF:");
 
         jLabel14.setText("Bairro:");
 
@@ -321,15 +365,11 @@ public class Cad_Cliente extends javax.swing.JFrame {
                         .addComponent(jLabel15))
                     .addGroup(pnl_enderecoCobrancaLayout.createSequentialGroup()
                         .addComponent(txt_cep_cob, javax.swing.GroupLayout.PREFERRED_SIZE, 69, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(jLabel12)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(cbx_uf_cob, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(jLabel11)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(pnl_enderecoCobrancaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(txt_complemento_cob)
+                    .addComponent(txt_complemento_cob, javax.swing.GroupLayout.DEFAULT_SIZE, 546, Short.MAX_VALUE)
                     .addComponent(txt_cidade_cob)
                     .addComponent(txt_logradouro_cob, javax.swing.GroupLayout.Alignment.TRAILING))
                 .addContainerGap())
@@ -347,9 +387,7 @@ public class Cad_Cliente extends javax.swing.JFrame {
                         .addComponent(txt_complemento_cob))
                     .addGroup(pnl_enderecoCobrancaLayout.createSequentialGroup()
                         .addGroup(pnl_enderecoCobrancaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel12)
                             .addComponent(jLabel3)
-                            .addComponent(cbx_uf_cob, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(txt_cep_cob)
                             .addComponent(jLabel11))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -389,6 +427,11 @@ public class Cad_Cliente extends javax.swing.JFrame {
         btn_cad_cliente.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
 
         btn_consulta1.setText("OK");
+        btn_consulta1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_consulta1ActionPerformed(evt);
+            }
+        });
 
         btn_consulta2.setText("Cancelar");
 
@@ -445,10 +488,6 @@ public class Cad_Cliente extends javax.swing.JFrame {
 
         jLabel19.setText("Cidade:");
 
-        cbx_uf_ent.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "MG" }));
-
-        jLabel20.setText("UF:");
-
         jLabel21.setText("Bairro:");
 
         jLabel22.setText("Logradouro:");
@@ -485,15 +524,11 @@ public class Cad_Cliente extends javax.swing.JFrame {
                         .addComponent(jLabel22))
                     .addGroup(pnl_enderecoEntregaLayout.createSequentialGroup()
                         .addComponent(txt_cep_ent, javax.swing.GroupLayout.PREFERRED_SIZE, 69, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(jLabel20)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(cbx_uf_ent, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(jLabel19)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(pnl_enderecoEntregaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(txt_complemento_ent)
+                    .addComponent(txt_complemento_ent, javax.swing.GroupLayout.DEFAULT_SIZE, 546, Short.MAX_VALUE)
                     .addComponent(txt_cidade_ent)
                     .addComponent(txt_logradouro_ent, javax.swing.GroupLayout.Alignment.TRAILING))
                 .addContainerGap())
@@ -511,9 +546,7 @@ public class Cad_Cliente extends javax.swing.JFrame {
                         .addComponent(txt_complemento_ent))
                     .addGroup(pnl_enderecoEntregaLayout.createSequentialGroup()
                         .addGroup(pnl_enderecoEntregaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel20)
                             .addComponent(jLabel18)
-                            .addComponent(cbx_uf_ent, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(txt_cep_ent)
                             .addComponent(jLabel19))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -584,8 +617,13 @@ public class Cad_Cliente extends javax.swing.JFrame {
     }//GEN-LAST:event_txt_cep_entKeyPressed
 
     private void btn_inclusaoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_inclusaoActionPerformed
-        
+        txt_codigo.setEnabled(false);
+        txt_nome.requestFocus();
     }//GEN-LAST:event_btn_inclusaoActionPerformed
+
+    private void btn_consulta1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_consulta1ActionPerformed
+        salva();
+    }//GEN-LAST:event_btn_consulta1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -630,14 +668,11 @@ public class Cad_Cliente extends javax.swing.JFrame {
     private javax.swing.JButton btn_consulta2;
     private javax.swing.JButton btn_exclusao;
     private javax.swing.JButton btn_inclusao;
-    private javax.swing.JComboBox cbx_uf_cob;
-    private javax.swing.JComboBox cbx_uf_ent;
-    private javax.swing.JCheckBox jCheckBox1;
-    private javax.swing.JComboBox jComboBox1;
+    private javax.swing.JComboBox cbx_tipo;
+    private javax.swing.JCheckBox chk_status;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
-    private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel14;
     private javax.swing.JLabel jLabel15;
@@ -646,7 +681,6 @@ public class Cad_Cliente extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel18;
     private javax.swing.JLabel jLabel19;
     private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel20;
     private javax.swing.JLabel jLabel21;
     private javax.swing.JLabel jLabel22;
     private javax.swing.JLabel jLabel23;
